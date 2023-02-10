@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.logo {
-  padding: 1.5em !important;
-}
-
 span.logos > a > span {
   overflow: inherit !important;
 }

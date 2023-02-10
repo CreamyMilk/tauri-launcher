@@ -12,11 +12,11 @@ const Banner = () => {
         <h1 className="font-mont font-extrabold text-2xl">Fortnite</h1>
       </div>
       <div className="h-16 w-112">
-        <h4 className="text-sm">Update</h4>
-        <h2 className="font-mont font-extrabold text-2xl mt-1">
+        <h4 className="text-white">Update</h4>
+        <h2 className="font-mont font-extrabold text-white text-2xl mt-1">
           The hunt is on in Fortnite Chapter 2 - Season 5: Zero Point.
         </h2>
-        <Button className="bg-blue-600 w-40 h-14 rounded-xl mt-7 flex p-4 items-center justify-between">
+        <Button className="bg-blue-600 text-white hover:text-inherit rounded-xl mt-7 flex gap-2 p-4 items-center">
           <span>Play for free</span>
           <RightArrowSvg />
         </Button>

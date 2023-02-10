@@ -1,15 +1,27 @@
-import React from 'react'
-import RightSideBarItem from './RightSideBarItem'
+import React from "react";
+import RightSideBarItem from "./RightSideBarItem";
 
 const RightSideBar = () => {
-    return (
-        <div className="ml-1 bg-black pl-2 py-2 rounded-r-xl">
-            <RightSideBarItem title={'Fortnite'} imgPath={'./images/rightBanner1.png'} />
-            <RightSideBarItem title={'Fortnite'} imgPath={'./images/rightBanner1.png'} />
-            <RightSideBarItem title={'Fortnite'} imgPath={'./images/rightBanner1.png'} />
-            <RightSideBarItem title={'Fortnite'} imgPath={'./images/rightBanner1.png'} />
-        </div>
-    )
-}
+  return (
+    <div className="ml-1 dark:bg-black pl-2 py-2 rounded-r-xl">
+      <RightSideBarItem
+        title={"Fortnite"}
+        imgPath={"./images/rightBanner1.png"}
+      />
+      <RightSideBarItem
+        title={"Fortnite"}
+        imgPath={"./images/rightBanner1.png"}
+      />
+      <RightSideBarItem
+        title={"Fortnite"}
+        imgPath={"./images/rightBanner1.png"}
+      />
+      <RightSideBarItem
+        title={"Fortnite"}
+        imgPath={"./images/rightBanner1.png"}
+      />
+    </div>
+  );
+};
 
-export default RightSideBar
+export default RightSideBar;

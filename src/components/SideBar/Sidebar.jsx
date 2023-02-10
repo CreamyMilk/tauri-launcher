@@ -12,29 +12,31 @@ import { TopHeader } from "../TopHeader";
 
 export const Sidebar = ({ children }) => {
   return (
-    <>
-      <div className="flex flex-row mt-14">
-        <div className="dark:bg-black w-64 min-h-screen flex items-center flex-col justify-start border-r-2 border-grey">
-          <div className="logo mb-14">
-            <img src="./logon.png" alt="" />
-           </div>
-          <nav className="sideNav">
-            <ul className="">
-              <SideBarMenuItem Icon={HomeSvg} title={"Home"} to={"./"} />
-              <SideBarMenuItem Icon={StoreSvg} title={"Store"} to={"./"} />
-              <SideBarMenuItem Icon={LibrarySvg} title={"Library"} to={"./"} />
-              <SideBarMenuItem Icon={PeopleSvg} title={"Friends"} to={"./"} />
-              <SideBarMenuItem Icon={LiveSvg} title={"Live"} to={"./"} />
-            </ul>
-          </nav>
-        </div>
-        <div className="ml-6 mr-12 w-full">
-          <>
-            <TopHeader />
-            {children}
-          </>
-        </div>
+    <div className="flex min-h-screen  dark:bg-black flex-row">
+      <div className="border-r-2 w-64 flex flex-col items-center border-gray-500">
+        <img src="./logon1.png" alt="" className="w-32 h-28 logo" />
+        <SideBarMenuItem
+          Icon={<i className="fa-solid fa-house"></i>}
+          title={"Home"}
+          to="./"
+        />
+        <SideBarMenuItem
+          Icon={<i class="fa-solid fa-fire-flame-curved"></i>}
+          title={"Store"}
+          to="./"
+        />
+        <SideBarMenuItem
+          Icon={<i class="fa-solid fa-user"></i>}
+          title={"Profile"}
+          to="./"
+        />
       </div>
-    </>
+      <div className="ml-6 mr-12 w-full">
+        <>
+          <TopHeader />
+          {children}
+        </>
+      </div>
+    </div>
   );
 };
