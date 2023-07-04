@@ -39,6 +39,7 @@ const App = () => {
   useEffect(() => {
     setloaded(true)
     setMeetingMode(Constants?.modes.CONFERENCE)
+    setParticipantName("George")
   }, [])
   if (!loaded) return <></>
 
@@ -57,7 +58,7 @@ const App = () => {
               meetingId,
               micEnabled: micOn,
               webcamEnabled: webcamOn,
-              name: participantName ? participantName : "TestUser",
+              name: participantName ? participantName : "NoName",
               mode: meetingMode,
               multiStream: false,
             }}

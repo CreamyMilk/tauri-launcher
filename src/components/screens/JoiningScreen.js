@@ -30,6 +30,8 @@ export function JoiningScreen({
   meetingMode,
 }) {
   const [setting, setSetting] = useState("video");
+  const [isCreating, setIsCreating] = useState(false)
+
   const [{ webcams, mics }, setDevices] = useState({
     devices: [],
     webcams: [],
@@ -283,6 +285,7 @@ export function JoiningScreen({
 
   useEffect(() => {
     getDevices({ micEnabled, webcamEnabled });
+    if (window.location.href.includes("create=true")) setIsCreating(true)
   }, []);
 
   const ButtonWithTooltip = ({ onClick, onState, OnIcon, OffIcon, mic }) => {
@@ -299,6 +302,7 @@ export function JoiningScreen({
     const closeTooltip = () => {
       setTooltipShow(false);
     };
+
 
     return (
       <>
@@ -345,7 +349,7 @@ export function JoiningScreen({
             <div className="grid grid-cols-12">
               <div className="md:col-span-7 2xl:col-span-6 col-span-12">
                 <div className="flex items-center justify-center p-1.5 sm:p-4 lg:p-6">
-                  <div className="relative w-full md:pl-4 sm:pl-10 pl-5  md:pr-4 sm:pr-10 pr-5">
+                  {isCreating && <div className="relative w-full md:pl-4 sm:pl-10 pl-5  md:pr-4 sm:pr-10 pr-5">
                     <div className="w-full relative" style={{ height: "45vh" }}>
                       <video
                         autoPlay
@@ -434,10 +438,10 @@ export function JoiningScreen({
                           </div>
                         </div>
                       )}
-                  </div>
+                  </div>}
                 </div>
               </div>
-              <div className="md:col-span-5 2xl:col-span-6 col-span-12 md:relative">
+              <div className={isCreating ? "md:col-span-5 2xl:col-span-6 col-span-12 md:relative" : "w-max"}>
                 <div className="flex flex-1 flex-col items-center justify-center xl:m-16 lg:m-6 md:mt-9 lg:mt-14 xl:mt-20 mt-3 md:absolute md:left-0 md:right-0 md:top-0 md:bottom-0">
                   <MeetingDetailsScreen
                     participantName={participantName}

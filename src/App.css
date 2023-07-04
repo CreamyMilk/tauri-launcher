@@ -24,5 +24,22 @@ span.logos > a > span {
 body {
   @apply dark:bg-black;
   @apply dark:text-white;
-  @layer font-mont font-medium;
+  @layer font-mont;
+}
+
+
+.stream-table {
+  border-spacing: 0 15px;
+}
+.stream-table tr {
+  border-radius: 20px;
+}
+stream-table tr td:nth-child(n+5),
+stream-table tr th:nth-child(n+5) {
+  border-radius: 0 .625rem .625rem 0;
+}
+
+stream-table tr td:nth-child(1),
+stream-table tr th:nth-child(1) {
+  border-radius: .625rem 0 0 .625rem;
 }

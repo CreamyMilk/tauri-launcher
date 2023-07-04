@@ -28,7 +28,7 @@ export const Sidebar = ({ children }) => {
          <SideBarMenuItem
           Icon={<i class="fa-solid fa-play"></i>}
           title={"Watch"}
-          to="./livestream"
+          to="./streams"
         />
         <SideBarMenuItem
           Icon={<i class="fa-solid fa-user"></i>}
