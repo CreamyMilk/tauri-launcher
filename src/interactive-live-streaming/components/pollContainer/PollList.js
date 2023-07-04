@@ -156,7 +156,7 @@ const Poll = ({ poll, isDraft, publishDraftPoll }) => {
           <p className="mx-2 text-gray-900 font-medium my-0">&#x2022;</p>
           <p
             className={`mx-2 text-sm ${
-              isPollActive || isDraft ? "text-orange-350" : "text-gray-900"
+              isPollActive || isDraft ? "text-orange-600" : "text-gray-900"
             }  font-medium my-0`}
           >
             {isPollActive
@@ -194,11 +194,11 @@ const Poll = ({ poll, isDraft, publishDraftPoll }) => {
                       className={`${
                         hasCorrectAnswer
                           ? isCorrectOption
-                            ? "bg-purple-550"
-                            : "bg-customGray-850"
+                            ? "bg-purple-600"
+                            : "bg-gray-800"
                           : maxSubmittedOptions.includes(item.optionId)
-                          ? "bg-purple-550"
-                          : "bg-customGray-850"
+                          ? "bg-purple-600"
+                          : "bg-gray-800"
                       } rounded`}
                       style={{ width: `${percentage}%` }}
                     ></div>
@@ -316,7 +316,7 @@ const PollList = ({ panelHeight }) => {
         </div>
         <div className="xl:p-3 p-2 xl:mt-[18px] lg:mt-4 md:mt-[14px] sm:mt-3 mt-[10px]">
           <button
-            className="w-full text-white p-3 bg-purple-550"
+            className="w-full text-white p-3 bg-purple-600"
             onClick={() => {
               setSideBarMode(sideBarModes.CREATE_POLL);
             }}

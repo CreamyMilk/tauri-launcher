@@ -18,7 +18,7 @@ const ChatMessage = ({ senderId, senderName, text, timestamp }) => {
     >
       <div
         className={`flex ${localSender ? "items-end" : "items-start"
-          } flex-col py-1 px-2 rounded-md bg-gray-700`}
+          } flex-col py-1 px-2 rounded-md bg-gray-800`}
       >
         <p style={{ color: "#ffffff80" }}>
           {localSender ? "You" : nameTructed(senderName, 15)}
@@ -73,7 +73,7 @@ const ChatInput = ({ inputHeight }) => {
         </span>
         <input
           type="text"
-          className="py-4 text-base text-white bg-gray-750 rounded pr-10 focus:outline-none w-full"
+          className="py-4 text-base text-white bg-gray-800 rounded pr-10 pl-3 focus:outline-none w-full"
           placeholder="Write your message"
           autocomplete="off"
           ref={input}

@@ -90,7 +90,7 @@ export const OutlinedButton = ({
       >
         <div
           className={`flex items-center justify-center  rounded-lg ${
-            bgColor ? `${bgColor}` : isFocused ? "bg-white" : "bg-gray-750"
+            bgColor ? `${bgColor}` : isFocused ? "bg-white" : "bg-gray-800"
           } ${
             mouseOver
               ? "border-2 border-transparent border-solid"
@@ -99,7 +99,7 @@ export const OutlinedButton = ({
               : bgColor
               ? "border-2 border-transparent border-solid"
               : "border-2 border-solid border-[#ffffff33]"
-          } md:m-2 m-1`}
+          } m-1`}
           style={{
             transition: "all 200ms",
             transitionTimingFunction: "ease-in-out",

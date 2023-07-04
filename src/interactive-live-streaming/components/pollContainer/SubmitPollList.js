@@ -173,7 +173,7 @@ const SubmitPollListItem = ({ poll }) => {
           <p className="mx-2 text-gray-900 font-medium my-0">&#x2022;</p>
           <p
             className={`mx-2 text-sm ${
-              isPollActive ? "text-orange-350" : "text-gray-900"
+              isPollActive ? "text-orange-400" : "text-gray-900"
             }  font-medium my-0`}
           >
             {isPollActive
@@ -238,13 +238,13 @@ const SubmitPollListItem = ({ poll }) => {
                                   ? "bg-blue-500"
                                   : hasCorrectAnswer && !isPollActive
                                   ? isCorrectOption
-                                    ? "bg-purple-550"
-                                    : "bg-orange-350"
+                                    ? "bg-purple-600"
+                                    : "bg-orange-400"
                                   : maxSubmittedOptions.includes(
                                       option.optionId
                                     )
-                                  ? "bg-purple-550"
-                                  : "bg-orange-350"
+                                  ? "bg-purple-600"
+                                  : "bg-orange-400"
                               } rounded`}
                               style={{ width: `${percentage}%` }}
                             ></div>

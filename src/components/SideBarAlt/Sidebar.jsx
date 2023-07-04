@@ -25,15 +25,15 @@ export const Sidebar = ({ children }) => {
           title={"Store"}
           to="./"
         />
+         <SideBarMenuItem
+          Icon={<i class="fa-solid fa-play"></i>}
+          title={"Watch"}
+          to="./livestream"
+        />
         <SideBarMenuItem
           Icon={<i class="fa-solid fa-user"></i>}
           title={"Profile"}
           to="./"
-        />
-        <SideBarMenuItem
-          Icon={<i class="fa-solid fa-user"></i>}
-          title={"Stream"}
-          to="./livestream"
         />
       </div>
       <div className="ml-6 mr-12 w-full">

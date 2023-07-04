@@ -4,7 +4,7 @@ import { createMeeting, getToken, validateMeeting } from "../../api";
 import { CheckCircleIcon } from "@heroicons/react/outline";
 import SettingDialogueBox from "../SettingDialogueBox";
 import ConfirmBox from "../ConfirmBox";
-import { usePubSub, useMeeting, useParticipant, MeetingProvider,Constants } from "/src/imports.js"
+import { usePubSub, useMeeting, useParticipant, MeetingProvider, Constants } from "/src/imports.js"
 
 
 import useIsMobile from "../../hooks/useIsMobile";
@@ -308,9 +308,8 @@ export function JoiningScreen({
             onMouseEnter={openTooltip}
             onMouseLeave={closeTooltip}
             onClick={onClick}
-            className={`rounded-full min-w-auto w-11 h-11 flex items-center justify-center ${
-              onState ? "bg-white" : "bg-red-650 text-white"
-            }`}
+            className={`rounded-full min-w-auto w-11 h-11 flex items-center justify-center ${onState ? "bg-white" : "bg-red-600 text-white"
+              }`}
             disabled={meetingMode === Constants?.modes.VIEWER}
           >
             {onState ? (
@@ -322,9 +321,8 @@ export function JoiningScreen({
         </div>
         <div
           style={{ zIndex: 999 }}
-          className={`${
-            tooltipShow ? "" : "hidden"
-          } overflow-hidden flex flex-col items-center justify-center pb-1.5`}
+          className={`${tooltipShow ? "" : "hidden"
+            } overflow-hidden flex flex-col items-center justify-center pb-1.5`}
           ref={tooltipRef}
         >
           <div className={"rounded-md p-1.5 bg-black "}>

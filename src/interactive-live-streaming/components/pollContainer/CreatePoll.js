@@ -50,7 +50,7 @@ const CreatePollPart = ({
     <div className={`flex flex-col xl:m-4 m-2 overflow-y-auto`}>
       <input
         type="text"
-        className="bg-gray-750  text-white text-sm rounded block w-full p-2.5 border border-gray-600 placeholder-gray-400 focus:ring-0 focus:border-purple-550"
+        className="bg-gray-800  text-white text-sm rounded block w-full p-2.5 border border-gray-600 placeholder-gray-400 focus:ring-0 focus:border-purple-600"
         placeholder="What you want to ask ?"
         autoFocus
         value={question}
@@ -59,7 +59,7 @@ const CreatePollPart = ({
 
       {questionErr && (
         <div className="mt-[2px]">
-          <p className="text-xs text-red-150">Please enter proper question.</p>
+          <p className="text-xs text-red-400">Please enter proper question.</p>
         </div>
       )}
 
@@ -94,7 +94,7 @@ const CreatePollPart = ({
                     <div
                       className={` ${
                         item.isCorrect && item.option !== ""
-                          ? "bg-purple-550"
+                          ? "bg-purple-600"
                           : "bg-customGray-900"
                       } w-full relative rounded  ${
                         isMarkAsCorrectChecked && item.option !== ""
@@ -106,7 +106,7 @@ const CreatePollPart = ({
                         type="text"
                         className={`border-none ${
                           item.isCorrect && item.option !== ""
-                            ? "bg-purple-550"
+                            ? "bg-purple-600"
                             : "bg-customGray-900"
                         } text-white focus:ring-0 rounded-l`}
                         placeholder="Add your options"
@@ -192,7 +192,7 @@ const CreatePollPart = ({
               inputref={createOptionRef}
               className={`border-none ${
                 option.isCorrect && option.option
-                  ? "bg-purple-550"
+                  ? "bg-purple-600"
                   : "bg-customGray-900"
               }  ${
                 isMarkAsCorrectChecked && option.option ? "ml-2" : "ml-0"
@@ -232,12 +232,12 @@ const CreatePollPart = ({
           {/* end of dummy Text */}
 
           {minOptionErr && (
-            <p className="text-xs text-red-150 mt-1">
+            <p className="text-xs text-red-400 mt-1">
               Please add atleast 2 options.
             </p>
           )}
           {optionErr && (
-            <p className="text-xs text-red-150 mt-1">
+            <p className="text-xs text-red-400 mt-1">
               Please enter valid option value.
             </p>
           )}
@@ -255,7 +255,7 @@ const CreatePollPart = ({
               </Label>
             </div>
             {correctAnswerErr && (
-              <p className="text-xs text-red-150 mt-1">
+              <p className="text-xs text-red-400 mt-1">
                 {
                   "Please check any one option as correct if `isMarkAsCorrectChecked`"
                 }
@@ -295,7 +295,7 @@ const CreatePollPart = ({
               </div>
               <div className="mt-1 ml-1">
                 {timerErr && (
-                  <p className="text-xs text-red-150">
+                  <p className="text-xs text-red-400">
                     {"Timer should be more than 30 seconds."}
                   </p>
                 )}
@@ -429,7 +429,7 @@ const PollButtonPart = ({
         Save
       </button>
       <button
-        className="w-1/2 ml-2 p-2 text-white bg-purple-550 rounded"
+        className="w-1/2 ml-2 p-2 text-white bg-purple-600 rounded"
         onClick={() => {
           const isValid = handleValidation({
             question,

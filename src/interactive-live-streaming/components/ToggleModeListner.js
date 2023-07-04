@@ -49,7 +49,7 @@ const ToggleModeContainer = ({ participantId, participantMode }) => {
                   participantMode === Constants.modes.CONFERENCE
                     ? "w-48"
                     : "w-40"
-                } left-full z-10 mt-1 -translate-x-full shadow-xl transform py-2.5  sm:px-0  bg-gray-750 rounded-sm hover:cursor-pointer`}
+                } left-full z-10 mt-1 -translate-x-full shadow-xl transform py-2.5  sm:px-0  bg-gray-800 rounded-sm hover:cursor-pointer`}
               >
                 <div
                   onClick={(e) => {
@@ -66,7 +66,7 @@ const ToggleModeContainer = ({ participantId, participantMode }) => {
                   }}
                   className=""
                 >
-                  <div className="flex flex-row hover:bg-customGray-350 px-3 py-0.5">
+                  <div className="flex flex-row hover:bg-gray-400 px-3 py-0.5">
                     <div className="flex items-center justify-center">
                       <ParticipantAddHostIcon
                         fill={

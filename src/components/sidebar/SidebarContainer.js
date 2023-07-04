@@ -1,5 +1,5 @@
-import { usePubSub, useMeeting, useParticipant, MeetingProvider,Constants } from "/src/imports.js"
-;
+import { usePubSub, useMeeting, useParticipant, MeetingProvider, Constants } from "/src/imports.js"
+  ;
 import React, { Fragment } from "react";
 import useIsMobile from "../../hooks/useIsMobile";
 import useIsTab from "../../hooks/useIsTab";
@@ -42,7 +42,7 @@ const SideBarTabView = ({
     >
       <div>
         <div
-          className="bg-gray-750"
+          className="bg-gray-700"
           style={{
             height: height,
             borderRadius: 10,
@@ -61,26 +61,24 @@ const SideBarTabView = ({
               >
                 <p className="text-base text-white font-bold">
                   {sideBarMode === "PARTICIPANTS"
-                    ? `${
-                        sideBarMode.charAt(0).toUpperCase() +
-                          sideBarMode.slice(1).toLowerCase() || ""
-                      } (${new Map(participants)?.size})`
+                    ? `${sideBarMode.charAt(0).toUpperCase() +
+                    sideBarMode.slice(1).toLowerCase() || ""
+                    } (${new Map(participants)?.size})`
                     : sideBarMode === sideBarModes.CREATE_POLL
-                    ? "Create a poll"
-                    : sideBarMode === sideBarModes.POLLS
-                    ? polls?.length >= 1 || draftPolls?.length >= 1
-                      ? `Polls ${
-                          polls?.length || draftPolls?.length
+                      ? "Create a poll"
+                      : sideBarMode === sideBarModes.POLLS
+                        ? polls?.length >= 1 || draftPolls?.length >= 1
+                          ? `Polls ${polls?.length || draftPolls?.length
                             ? `(${polls?.length || draftPolls?.length})`
                             : ""
-                        }`
-                      : meetingMode === Constants.modes.VIEWER
-                      ? `Polls ${polls?.length ? `(${polls?.length})` : ""}`
-                      : "Create a poll"
-                    : sideBarMode === sideBarModes.ECOMMERCE
-                    ? "Products"
-                    : sideBarMode.charAt(0).toUpperCase() +
-                        sideBarMode.slice(1).toLowerCase() || ""}
+                          }`
+                          : meetingMode === Constants.modes.VIEWER
+                            ? `Polls ${polls?.length ? `(${polls?.length})` : ""}`
+                            : "Create a poll"
+                        : sideBarMode === sideBarModes.ECOMMERCE
+                          ? "Products"
+                          : sideBarMode.charAt(0).toUpperCase() +
+                          sideBarMode.slice(1).toLowerCase() || ""}
                 </p>
                 <button
                   className="text-white"
@@ -105,8 +103,6 @@ const SideBarTabView = ({
               <SubmitPollList {...{ panelHeight }} />
             ) : sideBarMode === "CREATE_POLL" ? (
               <CreatePoll {...{ panelHeight }} />
-            ) : sideBarMode === "ECOMMERCE" ? (
-              <ECommercePanel {...{ panelHeight }} />
             ) : null}
           </>
         </div>
@@ -134,22 +130,22 @@ export function SidebarConatiner({
   const panelHeaderHeight = isMobile
     ? 40
     : isTab
-    ? 44
-    : isLGDesktop
-    ? 48
-    : isXLDesktop
-    ? 52
-    : 0;
+      ? 44
+      : isLGDesktop
+        ? 48
+        : isXLDesktop
+          ? 52
+          : 0;
 
   const panelHeaderPadding = isMobile
     ? 6
     : isTab
-    ? 8
-    : isLGDesktop
-    ? 10
-    : isXLDesktop
-    ? 12
-    : 0;
+      ? 8
+      : isLGDesktop
+        ? 10
+        : isXLDesktop
+          ? 12
+          : 0;
 
   const handleClose = () => {
     setSideBarMode(null);

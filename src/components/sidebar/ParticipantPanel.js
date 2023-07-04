@@ -100,7 +100,7 @@ export function ParticipantPanel({ panelHeight }) {
 
   return (
     <div
-      className={`flex w-full flex-col bg-gray-750 overflow-y-auto `}
+      className={`flex w-full flex-col bg-gray-700 overflow-y-auto `}
       style={{ height: panelHeight }}
     >
       <div

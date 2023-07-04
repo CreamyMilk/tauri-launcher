@@ -177,14 +177,14 @@ export default function SettingDialogueBox({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded bg-gray-750 p-6 text-center align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded bg-gray-800 p-6 text-center align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h5"
                     className="text-lg font-medium leading-6 text-white"
                   >
                     Settings
                   </Dialog.Title>
-                  <div className="flex flex-1  flex-col overflow-hidden bg-gray-750  xl:p-[2px] lg:p-[5px] p-[2px]">
+                  <div className="flex flex-1  flex-col overflow-hidden bg-gray-800  xl:p-[2px] lg:p-[5px] p-[2px]">
                     <div className="flex items-center justify-center">
                       <div className="absolute top-2 right-2 focus-visible:border-none">
                         <button
@@ -210,7 +210,7 @@ export default function SettingDialogueBox({
                                   setting === value
                                     ? "bg-blue-500 border-transparent"
                                     : "border-gray-100"
-                                }  text-sm font-medium rounded-sm text-white bg-gray-750`}
+                                }  text-sm font-medium rounded-sm text-white bg-gray-800`}
                                 onClick={() => {
                                   handleSetting(null, value);
                                 }}

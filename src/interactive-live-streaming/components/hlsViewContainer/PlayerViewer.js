@@ -76,7 +76,7 @@ const PlayerViewer = () => {
   return (
     <div
       className={`h-full w-full ${
-        playHls ? "bg-gray-800" : "bg-gray-750"
+        playHls ? "bg-gray-800" : "bg-gray-800"
       } relative overflow-hidden rounded-lg`}
     >
       {playHls ? (

@@ -124,7 +124,7 @@ export const MobileIconButton = ({
               {buttonText ? (
                 <p
                   className={`${
-                    isFocused ? "text-white" : "text-gray-900"
+                    isFocused ? "text-white" : "text-white"
                   } text-sm`}
                 >
                   {buttonText}

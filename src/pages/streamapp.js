@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { usePubSub, useMeeting, useParticipant, MeetingProvider,Constants } from "/src/imports.js"
-;
+import { usePubSub, useMeeting, useParticipant, MeetingProvider, Constants } from "/src/imports.js";
+
 import { LeaveScreen } from "../components/screens/LeaveScreen";
 import { JoiningScreen } from "../components/screens/JoiningScreen";
 import { ILSContainer } from "../interactive-live-streaming/ILSContainer";
 import { MeetingAppProvider } from "../MeetingAppContextDef";
 
 const App = () => {
-  console.log(Constants);
-
+  const [loaded, setloaded] = useState(false)
   const [token, setToken] = useState("");
   const [meetingId, setMeetingId] = useState("");
   const [participantName, setParticipantName] = useState("");
@@ -19,12 +18,12 @@ const App = () => {
   const [selectWebcamDeviceId, setSelectWebcamDeviceId] = useState(
     selectedWebcam.id
   );
-  const [meetingMode, setMeetingMode] = useState(Constants?.modes.CONFERENCE);
+  const [meetingMode, setMeetingMode] = useState();
   const [selectMicDeviceId, setSelectMicDeviceId] = useState(selectedMic.id);
   const [isMeetingStarted, setMeetingStarted] = useState(false);
   const [isMeetingLeft, setIsMeetingLeft] = useState(false);
 
-  const isMobile = (() => window  && window.matchMedia(
+  const isMobile = (() => window && window.matchMedia(
     "only screen and (max-width: 768px)"
   ).matches);
 
@@ -36,6 +35,13 @@ const App = () => {
       };
     }
   }, [isMobile]);
+
+  useEffect(() => {
+    setloaded(true)
+    setMeetingMode(Constants?.modes.CONFERENCE)
+  }, [])
+  if (!loaded) return <></>
+
 
   return (
     <>

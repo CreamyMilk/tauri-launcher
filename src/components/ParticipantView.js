@@ -458,7 +458,7 @@ export function ParticipantView({ participantId }) {
       onMouseLeave={() => {
         setMouseOver(false);
       }}
-      className={`h-full w-full  bg-gray-750 relative overflow-hidden rounded-lg video-cover`}
+      className={`h-full w-full  bg-gray-800 relative overflow-hidden rounded-lg video-cover`}
     >
       <audio ref={micRef} autoPlay muted={isLocal} />
       {webcamOn ? (
