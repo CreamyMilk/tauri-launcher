@@ -30,6 +30,11 @@ export const Sidebar = ({ children }) => {
           title={"Profile"}
           to="./"
         />
+        <SideBarMenuItem
+          Icon={<i class="fa-solid fa-user"></i>}
+          title={"Stream"}
+          to="./livestream"
+        />
       </div>
       <div className="ml-6 mr-12 w-full">
         <>

@@ -1,0 +1,43 @@
+import { usePubSub, useMeeting, useParticipant, MeetingProvider,Constants } from "/src/imports.js"
+;
+import { useEffect, useRef } from "react";
+import { debounce } from "../../utils/common";
+
+const LocalParticipantListner = ({ localParticipantId, meetingMode }) => {
+  const localParticipant = useParticipant(localParticipantId);
+  const localParticipantRef = useRef(localParticipant);
+
+  useEffect(() => {
+    localParticipantRef.current = localParticipant;
+  }, [localParticipant]);
+
+  const _handleChangePinState = debounce(
+    ({ meetingMode, localParticipant }) => {
+      if (meetingMode === Constants.modes.CONFERENCE) {
+        if (
+          !(
+            localParticipantRef.current.pinState?.share ||
+            localParticipantRef.current.pinState?.cam
+          )
+        ) {
+          localParticipant.pin();
+        }
+      } else {
+        if (
+          localParticipantRef.current.pinState?.share ||
+          localParticipantRef.current.pinState?.cam
+        ) {
+          localParticipant.unpin();
+        }
+      }
+    },
+    2000
+  );
+
+  useEffect(() => {
+    _handleChangePinState({ meetingMode, localParticipant });
+  }, [meetingMode]);
+  return <></>;
+};
+
+export default LocalParticipantListner;

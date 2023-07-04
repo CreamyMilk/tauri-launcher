@@ -2,6 +2,8 @@ import type { AppProps } from "next/app";
 
 import "../style.css";
 import "../App.css";
+import "../index.css";
+
 import Script from "next/script";
 
 // This default export is required in a new `pages/_app.js` file.

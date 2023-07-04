@@ -8,7 +8,7 @@ import nextLogo from "../assets/next.svg";
 import Banner from "../components/Banner/Banner";
 import SuggestCard from "../components/Card/SuggestCard";
 import RightSideBar from "../components/RightSideBar";
-import { Sidebar } from "../components/SideBar/Sidebar";
+import { Sidebar } from "../components/SideBarAlt/Sidebar";
 
 function App() {
   useEffect(() => {
