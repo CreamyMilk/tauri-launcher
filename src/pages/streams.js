@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Sidebar } from "../components/SideBarAlt/Sidebar";
 
 
@@ -10,9 +11,10 @@ export default function Streams() {
             <p className="text-3xl font-bold">Live Streams</p>
             <p className="my-5">Stream and Watch your favourite players</p>
           </div>
-          <a href="./stream?create=true" className="bg-purple-400 float-right text-white px-2 py-3 rounded-xl">
+          <Link href="./stream?create=true"><a className="bg-purple-400 float-right text-white px-2 py-3 rounded-xl">
             Start Stream
           </a>
+          </Link>
         </div>
         <input type="text" className="px-4 py-3 bg-gray-900 rounded-xl text-white w-full" placeholder="🔍 Search" />
         <table className="stream-table table text-gray-400 border-separate space-y-6 text-sm w-full">
@@ -39,7 +41,7 @@ export default function Streams() {
                   Counter Strike: Global Offensive
                 </td>
                 <td className="p-3">
-                  <a href="./stream?id=8gqh-2wkd-2dl2" className="w-full hover:text-white bg-purple-400 text-white p-2 rounded mt-5">Enter</a>
+                  <Link href="./stream?id=8gqh-2wkd-2dl2"><a className="w-full hover:text-white bg-purple-400 text-white p-2 rounded mt-5">Enter</a></Link>
                 </td>
               </tr>
             )}

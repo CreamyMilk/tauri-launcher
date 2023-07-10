@@ -475,11 +475,12 @@ export function ILSBottomBar({
       <OutlinedButton
         Icon={EndIcon}
         bgColor="bg-red-400"
+        borderColor="bg-red-300"
         onClick={() => {
           leave();
           setIsMeetingLeft(true);
         }}
-        tooltip="Leave Meeting"
+        tooltip="Leave LiveStream"
       />
     );
   };
@@ -939,12 +940,12 @@ export function ILSBottomBar({
                                 isMobile={isMobile}
                                 isTab={isTab}
                               />
-                            ) : icon ===
-                              BottomBarButtonTypes.MEETING_ID_COPY ? (
-                              <MeetingIdCopyBTN
-                                isMobile={isMobile}
-                                isTab={isTab}
-                              />
+                            // ) : icon ===
+                            //   BottomBarButtonTypes.MEETING_ID_COPY ? (
+                            //   <MeetingIdCopyBTN
+                            //     isMobile={isMobile}
+                            //     isTab={isTab}
+                            //   />
                             ) : icon === BottomBarButtonTypes.HLS ? (
                               <HLSBTN isMobile={isMobile} isTab={isTab} />
                             // ) : icon === BottomBarButtonTypes.POLL ? (
@@ -1007,7 +1008,7 @@ export function ILSBottomBar({
     </div>
   ) : (
     <div className="flex text-white lg:px-2 xl:px-6 pb-2 px-2">
-      <MeetingIdCopyBTN />
+      {/* <MeetingIdCopyBTN /> */}
       <div className="flex flex-1 items-center justify-center" ref={tollTipEl}>
         {meetingMode === Constants.modes.CONFERENCE && (
           <ScreenShareBTN isMobile={isMobile} isTab={isTab} />
