@@ -38,8 +38,3 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
-      - name: Building launcher release 🤖
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Launcher
-          path: D:\a\tauri-launcher\tauri-launcher\src-tauri\target\release\bundle\nsis\tauri-launcher_1.0.0_x64-setup.exe
