@@ -11,9 +11,9 @@ export const TopHeader = () => {
         <Button>Wishlist</Button>
       </div>
       <div className="flex items-center">
-        <i class="fa-solid fa-bell text-xl"></i>
+        <i className="fa-solid fa-bell text-xl"></i>
         <div className="flex ml-8 items-center dark:bg-black rounded-full gap-2 py-2">
-          <i class="fa-solid fa-magnifying-glass text-xl"></i>
+          <i className="fa-solid fa-magnifying-glass text-xl"></i>
           <input
             className="dark:bg-black pl-2 rounded-full focus:outline-none"
             type="text"

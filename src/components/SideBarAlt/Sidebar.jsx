@@ -21,17 +21,17 @@ export const Sidebar = ({ children }) => {
           to="./"
         />
         <SideBarMenuItem
-          Icon={<i class="fa-solid fa-fire-flame-curved"></i>}
+          Icon={<i className="fa-solid fa-fire-flame-curved"></i>}
           title={"Store"}
           to="./"
         />
          <SideBarMenuItem
-          Icon={<i class="fa-solid fa-play"></i>}
+          Icon={<i className="fa-solid fa-play"></i>}
           title={"Watch"}
           to="./streams"
         />
         <SideBarMenuItem
-          Icon={<i class="fa-solid fa-user"></i>}
+          Icon={<i className="fa-solid fa-user"></i>}
           title={"Profile"}
           to="./"
         />

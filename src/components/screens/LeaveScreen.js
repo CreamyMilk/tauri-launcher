@@ -13,9 +13,9 @@ export function LeaveScreen({ setIsMeetingLeft }) {
         </button> */}
         <a
           className="w-full text-center bg-purple-400 text-white px-16 py-3 rounded-lg text-sm"
-          href="/"
+          href="/streams"
         >
-          Back To Home
+          Back
         </a>
       </div>
     </div>

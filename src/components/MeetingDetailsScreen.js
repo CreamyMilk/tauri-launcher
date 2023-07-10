@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 export function MeetingDetailsScreen({
   onClickJoin,
   _handleOnCreateMeeting,
-  mid,
   participantName,
   setParticipantName,
   videoTrack,
@@ -36,7 +35,7 @@ export function MeetingDetailsScreen({
         if (!iscreateMeetingClicked && !isJoinMeetingClicked) window.location.assign("./streams")
         else iscreateMeetingClicked ? setIscreateMeetingClicked(false) : setIsJoinMeetingClicked(false)
       }}
-        className="my-3 p-3 bg-gray-700 rounded-lg cursor-pointer"><i class="fa-solid fa-arrow-left"></i> Back
+        className="my-3 p-3 bg-gray-700 rounded-lg cursor-pointer"><i className="fa-solid fa-arrow-left"></i> Back
       </a>
       {iscreateMeetingClicked ? (
         <div className="border border-solid border-gray-400 rounded-xl px-4 py-3  flex items-center justify-center">
@@ -81,7 +80,6 @@ export function MeetingDetailsScreen({
       {
         (iscreateMeetingClicked || isJoinMeetingClicked) && (
           <>
-
             <input
               value={participantName}
               disabled
@@ -90,7 +88,6 @@ export function MeetingDetailsScreen({
               className="px-4 py-3 mt-5 bg-gray-900 rounded-xl text-white w-full text-center"
             />
             <button
-              disabled={participantName.length < 3}
               className={`w-full ${participantName.length < 3 ? "bg-gray-700" : "bg-purple-400"
                 }  text-white px-2 py-3 rounded-xl mt-5`}
               onClick={(e) => {

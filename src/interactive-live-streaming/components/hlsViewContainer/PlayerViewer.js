@@ -7,8 +7,7 @@ import useIsMobile from "../../../hooks/useIsMobile";
 import useIsTab from "../../../hooks/useIsTab";
 import { useMediaQuery } from "react-responsive";
 import { useMeetingAppContext } from "../../../MeetingAppContextDef";
-import { usePubSub, useMeeting, useParticipant, MeetingProvider,Constants } from "/src/imports.js"
-;
+import { usePubSub, useMeeting, useParticipant, MeetingProvider,Constants } from "/src/imports.js";
 
 export async function sleep(ms) {
   return new Promise((resolve) => {
