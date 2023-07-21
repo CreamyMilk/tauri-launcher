@@ -1,19 +1,14 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.text-404 p{
+  letter-spacing: 1.5px;
+  font-family:'Courier New', Courier, monospace;
 }
-
+.gamecard{
+  box-shadow: 0 0 30px rgba(0, 97, 100, 0.287);
+}
+.game-card-details{
+  -webkit-backface-visibility:hidden;
+  backface-visibility: hidden;
+}
 .container {
   margin: 0;
   padding-top: 10vh;

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Sidebar } from "../components/SideBarAlt/Sidebar";
+import Layout from "../components/layout";
+
 
 
 export default function Streams() {
   return (
-    <Sidebar>
+    <Layout>
       <div className="max-h-[90vh] overflow-scroll">
         <div className="flex items-center justify-between mr-3">
           <div>
@@ -48,6 +49,6 @@ export default function Streams() {
           </tbody>
         </table>
       </div>
-    </Sidebar>
+    </Layout>
   )
 }
