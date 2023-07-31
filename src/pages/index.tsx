@@ -23,8 +23,8 @@ export default function Home() {
               <span>Showing: </span>
               <button onClick={() => setplDp(!plDp)} className="font-semibold hover:border-transparent hover:text-cyan-400 cursor-pointer capitalize">{pl} <i className={`fa-solid fa-caret-${plDp ? 'up align-middle' : 'down'}`}></i></button>
               <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={plDp} onClose={() => { }}>
-                {platforms.map((p) =>
-                  <DropdownItem onClick={() => setpl(p)} className={`text-gray-300 capitalize mt-2 ${pl == p && "bg-slate-700"}`}>
+                {platforms.map((p,i) =>
+                  <DropdownItem key={i} onClick={() => setpl(p)} className={`text-gray-300 capitalize mt-2 ${pl == p && "bg-slate-700"}`}>
                     {p}
                   </DropdownItem>
                 )}
@@ -35,8 +35,8 @@ export default function Home() {
               <span>Sort By: </span>
               <button onClick={() => setsortDp(!sortDp)} className="font-semibold hover:border-transparent hover:text-cyan-400 cursor-pointer capitalize">{sort} <i className={`fa-solid fa-caret-${sortDp ? 'up align-middle' : 'down'}`}></i> </button>
               <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={sortDp} onClose={() => { }}>
-                {sortings.map((s) =>
-                  <DropdownItem onClick={() => setsort(s)} className={`text-gray-300 capitalize mt-2 ${sort == s && "bg-slate-700"}`}>
+                {sortings.map((s,i) =>
+                  <DropdownItem key={i} onClick={() => setsort(s)} className={`text-gray-300 capitalize mt-2 ${sort == s && "bg-slate-700"}`}>
                     {s}
                   </DropdownItem>
                 )}
