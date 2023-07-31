@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { Suspense, useState } from "react"
+import Loading from "./loading"
 
 export default function Layout({ children }) {
   const router = useRouter()
@@ -32,8 +33,7 @@ export default function Layout({ children }) {
 
   return (
     <main className="min-h-screen antialiased min-w-screen bg-gradient-to-br from-[rgb(10,15,40)] to-[rgb(5,3,16)]">
-
-      <div className="fixed flex flex-col font-semibold overflow-y-scroll overflow-x-hidden px-2 pt-5 pb-3 top-0 left-0 h-full w-64 bg-gradient-to-br from-[rgb(10,12,35)] to-[rgb(5,5,20)]">
+      <nav className="fixed flex flex-col font-semibold overflow-y-scroll overflow-x-hidden px-2 pt-5 pb-3 top-0 left-0 h-full w-64 bg-gradient-to-br from-[rgb(10,12,35)] to-[rgb(5,5,20)]">
         <img src="/ngamea.png" className="ml-3 h-12 w-12" alt="" />
 
         <ul className="text-white flex flex-col mt-10 gap-1">
@@ -70,15 +70,14 @@ export default function Layout({ children }) {
           <NavLinkIcon text="help and support" url="help" icon={<i className="fa-solid fa-circle-question"></i>} />
           <NavLinkIcon text="logout" url="logout" icon={<i className="fa-solid fa-power-off"></i>} />
         </ul>
+      </nav>
 
-      </div>
-
-      <div className="fixed bg-gradient-to-r overflow-x-scroll from-[rgb(10,15,40)] to-[rgb(5,3,16)] left-64 p-4 right-0 top-0 mb-5 z-50 flex items-center justify-between">
+      <nav className="fixed bg-gradient-to-r overflow-x-scroll from-[rgb(10,15,40)] to-[rgb(5,3,16)] left-64 p-4 right-0 top-0 mb-5 z-50 flex items-center justify-between">
         <div className="inline-flex gap-5 ml-12">
           <Navlink text="home" url="/" />
           <Navlink text="streams" url="streams" />
           <Navlink text="news" url="news" />
-          <Navlink text="settings" url="settings" />
+          <Navlink text="store" url="store" />
         </div>
         <div className="inline-flex gap-10 items-center mr-10">
           <div className="inline-flex items-center border border-gray-600 rounded-3xl px-4 py-2 gap-3">
@@ -91,11 +90,12 @@ export default function Layout({ children }) {
             </a>
           </Link>
         </div>
-
-      </div>
+      </nav>
 
       <section className="ml-80 pt-28 mr-10">
-        {children}
+        <Suspense fallback={<Loading />}>
+          {children}
+        </Suspense>
       </section>
     </main>
   )
