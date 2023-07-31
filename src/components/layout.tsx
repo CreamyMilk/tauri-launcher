@@ -67,6 +67,7 @@ export default function Layout({ children }) {
 
         <ul className="mt-auto">
           <NavLinkIcon text="downloads" url="downloads" icon={<i className="fa-solid fa-circle-arrow-down"></i>} />
+          <NavLinkIcon text="settings" url="settings" icon={<i className="fa-solid fa-gear"></i>} />
           <NavLinkIcon text="help and support" url="help" icon={<i className="fa-solid fa-circle-question"></i>} />
           <NavLinkIcon text="logout" url="logout" icon={<i className="fa-solid fa-power-off"></i>} />
         </ul>
@@ -76,8 +77,8 @@ export default function Layout({ children }) {
         <div className="inline-flex gap-5 ml-12">
           <Navlink text="home" url="/" />
           <Navlink text="streams" url="streams" />
-          <Navlink text="news" url="news" />
-          <Navlink text="store" url="store" />
+          {/* <Navlink text="news" url="news" /> */}
+          {/* <Navlink text="store" url="store" /> */}
         </div>
         <div className="inline-flex gap-10 items-center mr-10">
           <div className="inline-flex items-center border border-gray-600 rounded-3xl px-4 py-2 gap-3">
@@ -86,13 +87,13 @@ export default function Layout({ children }) {
           </div>
           <Link href="/profile">
             <a className="inline-flex items-center gap-2">
-              <img src="/ngamea.png" className="h-10 w-10 rounded-full" />Noob.Master<i className="fa-solid text-gray-500 fa-caret-down"></i>
+              <img src="/images/bottomBanner2.png" className="h-10 w-10 rounded-full object-cover" />Noob.Master
             </a>
           </Link>
         </div>
       </nav>
 
-      <section className="ml-80 pt-28 mr-10">
+      <section className="ml-64 pt-28">
         <Suspense fallback={<Loading />}>
           {children}
         </Suspense>

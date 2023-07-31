@@ -14,11 +14,15 @@ export default function Splash() {
     } else {
       setTimeout(() => {
         setload(load + 1)
-      }, (maxload / load)+2)
+      }, (maxload / load) + 2)
     }
   }
   useEffect(() => Interval(), [load])
-  https://www.prolydian.com/sites/default/files/2020-12/api.png
+
+  useEffect(() => {
+    invoke("greet", { name: "World" }).then(console.log).catch(console.error);
+  }, [])
+  
   return (
     <div className="h-screen w-screen gap-3 text-5xl flex flex-col justify-center items-center bg-[rgb(5,5,20)]">
       <img src="/ngamea.png" className="h-52 w-52" />

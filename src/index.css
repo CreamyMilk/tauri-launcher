@@ -9,6 +9,10 @@ body {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
 ::-webkit-scrollbar {
   width: 4px;
