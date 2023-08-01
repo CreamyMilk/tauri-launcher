@@ -10,7 +10,6 @@ export default function Splash() {
     if (load >= maxload) {
       setload(maxload)
       invoke('close_splashscreen').then(console.log).catch(console.error)
-      window && window.location.assign("/")
     } else {
       setTimeout(() => {
         setload(load + 1)
