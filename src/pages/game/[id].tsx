@@ -23,7 +23,7 @@ export default function Game() {
             <span className="text-gray-500 ">Latest Version 2.1.0</span>
             <a className="cursor-pointer hover:text-cyan-400 text-cyan-500">Version History</a>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex text-white items-center gap-6">
             <h2 className="text-5xl font-semibold">{idCheck == 2 ? "bioshock: the virus hunt" : "Valheim"}</h2>
             <button title="Share" className="rounded-full px-2 py-1 text-sm hover:border-transparent hover:bg-slate-700 bg-slate-900 border-transparent text-gray-500">
               <i className="fa-solid fa-arrow-up-from-bracket"></i>
@@ -37,7 +37,7 @@ export default function Game() {
             </button>
           </div>
           <hr className="border-slate-700 my-2" />
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center text-white">
             <GameAttr icon="tag" title="downloads" text="100k+" />
             <GameAttr icon="star" title="rating" text="4.6" />
             <GameAttr icon="tag" title="category" text="action" />
@@ -58,9 +58,9 @@ export default function Game() {
         )}
       </div>
 
-      <section className="mx-10 flex flex-col gap-10">
+      <section className="mx-10 text-white flex flex-col gap-10">
         <div>
-          <article className="font-semibold text-xl my-3">Description</article>
+          <article className="font-semibold  text-xl my-3">Description</article>
           <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum fugit atque consequuntur soluta accusantium corporis, rem ea at itaque impedit quibusdam voluptates nobis non, quia repellat nisi similique debitis quos!</span>
           {desc && <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ea voluptas deleniti quia quod, voluptatem reprehenderit velit porro voluptate sed ex laudantium, tempore, enim vero ad magnam aliquam corporis autem.</span>}
           <a className="cursor-pointer text-sm capitalize hover:text-cyan-300 text-cyan-400" onClick={() => setdesc(!desc)}> show {desc ? "less" : "more"}</a>

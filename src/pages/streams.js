@@ -7,7 +7,7 @@ export default function Streams() {
   return (
     <Layout>
       <div className="mx-10">
-        <div className="flex items-center justify-between mr-3">
+        <div className="flex text-white items-center justify-between mr-3">
           <div>
             <p className="text-3xl font-bold">Live Streams</p>
             <p className="my-5">Stream and Watch your favourite players</p>

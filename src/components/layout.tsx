@@ -11,13 +11,13 @@ export default function Layout({ children }) {
 
   const Navlink = ({ text, url }) =>
     <Link href={url}>
-      <a className={`rounded-3xl capitalize hover:text-cyan-400 hover:bg-[rgb(35,37,57)] w-full px-5 py-2 
+      <a className={`rounded-3xl capitalize text-white hover:text-cyan-400 hover:bg-[rgb(35,37,57)] w-full px-5 py-2 
     ${router.pathname == url ? "bg-[rgb(35,37,57)] text-cyan-400" : ""}`}>{text}</a>
     </Link>
 
   const Taglink = ({ text, color }) =>
-    <Link href={"/?tag=" + text}>
-      <a className={`rounded-3xl flex items-center hover:text-cyan-400 gap-2 capitalize hover:bg-[rgb(35,37,57)] w-full px-5 py-2
+    <Link href={"/home?tag=" + text}>
+      <a className={`rounded-3xl flex items-center text-white hover:text-cyan-400 gap-2 capitalize hover:bg-[rgb(35,37,57)] w-full px-5 py-2
                   ${router.query.tag == text ? "bg-[rgb(35,37,57)] text-cyan-400" : ""}`}>
         <i className={"fa-solid fa-tag " + color}></i>{text}
       </a>
@@ -25,7 +25,7 @@ export default function Layout({ children }) {
 
   const NavLinkIcon = ({ text, icon, url }) =>
     <Link href={url}>
-      <a className={`rounded-3xl flex items-center gap-2 hover:text-cyan-400 capitalize hover:bg-[rgb(35,37,57)] w-full px-4 py-2
+      <a className={`rounded-3xl flex items-center gap-2 text-white hover:text-cyan-400 capitalize hover:bg-[rgb(35,37,57)] w-full px-4 py-2
         ${router.pathname == url ? "bg-[rgb(35,37,57)] text-cyan-400" : ""}`}>
         {icon}{text}
       </a>
@@ -42,7 +42,7 @@ export default function Layout({ children }) {
         </div>
 
         <ul className="text-white flex flex-col mt-10 gap-1">
-          <Navlink text="All Games" url="/" />
+          <Navlink text="All Games" url="/home" />
           <Navlink text="My Games" url="/my-games" />
           <Navlink text="Installed" url="/installed" />
           <Navlink text="Updates" url="/updates" />
@@ -80,14 +80,14 @@ export default function Layout({ children }) {
 
       <nav className="fixed bg-gradient-to-r overflow-x-scroll from-[rgb(10,15,40)] to-[rgb(5,3,16)] left-60 px-10 py-4 right-0 top-0 mb-5 z-50 flex items-center justify-between">
         <div className="inline-flex gap-5">
-          <Navlink text="home" url="/" />
+          <Navlink text="home" url="/home" />
           <Navlink text="streams" url="/streams" />
           {/* <Navlink text="news" url="news" /> */}
           {/* <Navlink text="store" url="store" /> */}
         </div>
         <div className="inline-flex gap-10 items-center">
           <div className="inline-flex items-center border border-gray-600 rounded-3xl px-4 py-2 gap-3">
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass text-white"></i>
             <input
               type="text"
               placeholder="Search game titles"
@@ -96,7 +96,7 @@ export default function Layout({ children }) {
             />
           </div>
           <Link href="/profile">
-            <a className="inline-flex items-center gap-2 hover:text-cyan-400">
+            <a className="inline-flex items-center gap-2 text-white hover:text-cyan-400">
               <img src="/bg/bg3.jpg" className="h-10 w-10 rounded-full object-cover" />Noob.Master
             </a>
           </Link>

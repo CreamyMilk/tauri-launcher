@@ -20,9 +20,3 @@ span.logos > a > span {
     filter: drop-shadow(0 0 2em #ffff);
   }
 }
-
-body {
-  @apply dark:bg-black;
-  @apply dark:text-white;
-  @layer font-mont;
-}
