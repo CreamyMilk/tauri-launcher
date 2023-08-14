@@ -21,7 +21,7 @@ export default function Home() {
           <div className="inline-flex items-center gap-12">
             <div className="relative">
               <span>Showing: </span>
-              <button onClick={() => setplDp(!plDp)} className="font-semibold hover:border-transparent hover:text-cyan-400 cursor-pointer capitalize">{pl} <i className={`fa-solid fa-caret-${plDp ? 'up align-middle' : 'down'}`}></i></button>
+              <a onClick={() => setplDp(!plDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{pl} <i className={`fa-solid fa-caret-${plDp ? 'up align-middle' : 'down'}`}></i></a>
               <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={plDp} onClose={() => { }}>
                 {platforms.map((p,i) =>
                   <DropdownItem key={i} onClick={() => setpl(p)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${pl == p && "bg-slate-700"}`}>
@@ -33,7 +33,7 @@ export default function Home() {
 
             <div className="relative">
               <span>Sort By: </span>
-              <button onClick={() => setsortDp(!sortDp)} className="font-semibold hover:border-transparent hover:text-cyan-400 cursor-pointer capitalize">{sort} <i className={`fa-solid fa-caret-${sortDp ? 'up align-middle' : 'down'}`}></i> </button>
+              <a onClick={() => setsortDp(!sortDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{sort} <i className={`fa-solid fa-caret-${sortDp ? 'up align-middle' : 'down'}`}></i> </a>
               <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={sortDp} onClose={() => { }}>
                 {sortings.map((s,i) =>
                   <DropdownItem key={i} onClick={() => setsort(s)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${sort == s && "bg-slate-700"}`}>
@@ -55,9 +55,9 @@ export default function Home() {
               <a
                 id={"game-card-details1"}
                 className="absolute flex text-2xl hover:text-white flex-col gap-4 game-card-details cursor-pointer invisible justify-end items-center h-full w-full top-0 hover:bg-[rgb(10,15,40)] hover:bg-opacity-50 rounded-3xl left-0">
-                <i className="fa-solid hover:text-cyan-400 fa-ellipsis"></i>
+                <i className="fa-solid  fa-ellipsis"></i>
                 <span className="mx-3 text-center font-semibold">Valheim</span>
-                <i className="fa-solid mb-8 hover:text-cyan-400 fa-circle-arrow-down"></i>
+                <i className="fa-solid mb-8  fa-circle-arrow-down"></i>
               </a>
             </Link>
           </div>
@@ -70,9 +70,9 @@ export default function Home() {
               <a
                 id={"game-card-details2"}
                 className="absolute flex text-2xl hover:text-white flex-col gap-4 game-card-details cursor-pointer invisible justify-end items-center h-full w-full top-0 hover:bg-[rgb(10,15,40)] hover:bg-opacity-50 rounded-3xl left-0">
-                <i className="fa-solid hover:text-cyan-400 fa-ellipsis"></i>
+                <i className="fa-solid  fa-ellipsis"></i>
                 <span className="mx-3 text-center capitalize font-semibold">bioshock:The virus hunt</span>
-                <i className="fa-solid mb-8 hover:text-cyan-400 fa-circle-arrow-down"></i>
+                <i className="fa-solid mb-8  fa-circle-arrow-down"></i>
               </a>
             </Link>
           </div>

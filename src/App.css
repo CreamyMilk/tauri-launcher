@@ -15,6 +15,9 @@ span.logos > a > span {
   filter: drop-shadow(0 0 2em #61dafb);
 }
 
+a,Link,a>i{
+  @apply hover:text-cyan-400 cursor-pointer
+}
 @media (prefers-color-scheme: dark) {
   .logo.next:hover {
     filter: drop-shadow(0 0 2em #ffff);

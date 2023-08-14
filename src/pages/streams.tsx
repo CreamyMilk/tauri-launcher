@@ -12,12 +12,12 @@ export default function Streams() {
             <p className="text-3xl font-bold">Live Streams</p>
             <p className="my-5">Stream and Watch your favourite players</p>
           </div>
-          <Link href="./stream?create=true"><a className="bg-purple-400 float-right text-white px-2 py-3 rounded-xl">
+          <Link href="./stream?create=true"><a className="bg-purple-400 float-right px-2 py-3 rounded-xl">
             Start Stream
           </a>
           </Link>
         </div>
-        <input type="text" className="px-4 py-3 bg-slate-900 ring-px ring-cyan-400 rounded-xl text-white w-full" placeholder="🔍 Search" />
+        <input type="text" className="px-4 py-3 text-white bg-slate-900 ring-px ring-cyan-400 rounded-xl w-full" placeholder="🔍 Search" />
         <table className="border-spacing-y-3 table text-gray-400 border-separate space-y-6 text-sm w-full">
           <thead className="bg-slate-800 text-gray-500">
             <tr>
@@ -27,7 +27,7 @@ export default function Streams() {
             </tr>
           </thead>
           <tbody>
-            {Array(30).fill().map((_, i) =>
+            {Array(30).fill(null).map((_, i) =>
               <tr key={i} className="bg-slate-900 shadow hover:bg-slate-800">
                 <td className="p-3">
                   <div className="flex align-items-center">

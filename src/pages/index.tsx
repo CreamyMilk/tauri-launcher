@@ -20,11 +20,11 @@ export default function Splash() {
   useEffect(() => Interval(), [load])
 
   return (
-    <main className="splashscreen">
+    <main className="splashscreen text-white">
       <div className="h-screen w-screen gap-3 flex flex-col justify-center items-center bg-[rgba(5,5,20,0.86)]">
         <img src="/ngamea.png" className="h-48 w-48" />
         <span className="text-7xl text-yellow-400 ">Ngamea Games</span>
-        <span className="text-7xl text-white">Launcher</span>
+        <span className="text-7xl">Launcher</span>
         <div>
           <span className="text-lg">Loading...</span>
           <div className="border border-blue-400 p-1 w-96">

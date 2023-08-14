@@ -21,7 +21,7 @@ export default function Game() {
         <div className="flex w-full flex-col gap-2 mt-4 capitalize">
           <div className="flex gap-2 text-sm">
             <span className="text-gray-500 ">Latest Version 2.1.0</span>
-            <a className="cursor-pointer hover:text-cyan-400 text-cyan-500">Version History</a>
+            <a className="cursor-pointer  text-cyan-500">Version History</a>
           </div>
           <div className="flex text-white items-center gap-6">
             <h2 className="text-5xl font-semibold">{idCheck == 2 ? "bioshock: the virus hunt" : "Valheim"}</h2>
@@ -102,7 +102,7 @@ export default function Game() {
             <div className="flex flex-col">
               <span>Website</span>
               <a>Flow Games Inc.</a>
-              <a className="flex gap-3 items-center cursor-pointer w-40 border-t py-2 mt-7 border-slate-600 text-cyan-500 hover:text-cyan-400">
+              <a className="flex gap-3 items-center cursor-pointer w-40 border-t py-2 mt-7 border-slate-600 text-cyan-500 ">
                 <i className="fa-solid fa-book-open"></i>Privacy Policy
               </a>
 
@@ -110,7 +110,7 @@ export default function Game() {
             <div className="flex flex-col">
               <span>Contact</span>
               <a>developer@flowgames.com</a>
-              <a className="flex gap-3 items-center cursor-pointer border-t py-2 mt-7 border-slate-600 text-cyan-500 hover:text-cyan-400">
+              <a className="flex gap-3 items-center cursor-pointer border-t py-2 mt-7 border-slate-600 text-cyan-500">
                 <i className="fa-regular fa-file-lines"></i>License Agreement
               </a>
             </div>
