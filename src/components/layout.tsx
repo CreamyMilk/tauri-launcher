@@ -95,7 +95,7 @@ export default function Layout({ children }) {
             />
           </div>
           <Link href="/profile">
-            <a className="inline-flex items-center gap-2 ">
+            <a className={"inline-flex items-center gap-2 " + (router.pathname == "/profile" ? "text-cyan-400" : "text-white")}>
               <img src="/bg/bg3.jpg" className="h-10 w-10 rounded-full object-cover" />NoobMaster65
             </a>
           </Link>

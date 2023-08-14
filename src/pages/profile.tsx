@@ -50,6 +50,10 @@ export default function ProfilePage() {
           <Achievement text="Fire Keeper" img="/animationWait.png" />
           <Achievement text="Top 5 Ninjas" img="/animationWait.png" />
           <Achievement text="Ninja Certified" img="/animationWait.png" />
+          <Link href="/badges"><a className="text-cyan-600 ml-auto items-end gap-3 text-xl flex flex-col uppercase">
+            <span>See all</span>
+            <i className="fa-solid fa-angle-right mr-1"></i>
+          </a></Link>
         </div>
         <h2 className={"text-2xl my-10 font-semibold uppercase"}>My Games</h2>
         {Array(4).fill(null).map((_, idx) =>
@@ -75,6 +79,6 @@ export default function ProfilePage() {
           </div>
         )}
       </section>
-    </Layout>
+    </Layout >
   )
 }
