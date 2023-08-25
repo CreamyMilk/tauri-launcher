@@ -69,11 +69,10 @@ export default function Layout({ children }) {
           <Taglink color="text-pink-400" text="horror" />
         </ul>
 
-        <ul className="mt-auto">
+        <ul className="mt-auto gap-2">
           <NavLinkIcon text="downloads" url="/downloads" icon={<i className="fa-solid fa-circle-arrow-down"></i>} />
           <NavLinkIcon text="settings" url="/settings" icon={<i className="fa-solid fa-gear"></i>} />
           <NavLinkIcon text="help and support" url="/help" icon={<i className="fa-solid fa-circle-question"></i>} />
-          <NavLinkIcon text="logout" url="/logout" icon={<i className="fa-solid fa-power-off"></i>} />
         </ul>
       </nav>
 

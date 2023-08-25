@@ -18,7 +18,10 @@ export function GetTime() {
     currentTime
   }`
 }
-function ConnectExample() {
+
+
+
+function WSConnectExample() {
   const ws = new WebSocket('ws://localhost:8080/query', "graphql-ws");
   ws.onopen = (e) => {
     console.log("✅ WS connected", e);

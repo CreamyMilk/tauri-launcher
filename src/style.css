@@ -12,11 +12,22 @@
   font-family: 'PlayMe';
   src: url("/fonts/PlaymegamesReguler-2OOee.ttf");
 }
+.font-playme{
+  font-family: PlayMe;
+}
 .splashscreen{
   font-family:PlayMe;
   background-image: url('/bg/bg3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+.loginpage{
+  background-image: url('/bg/bg2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.loginpage section,form {
+  background-color: rgba(0, 34, 46, 0.273);
 }
 .text-404 p{
   letter-spacing: 1.5px;

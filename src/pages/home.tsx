@@ -10,7 +10,7 @@ export default function Home() {
   const [pl, setpl] = useState(platforms[0])
 
   const [sortDp, setsortDp] = useState(false)
-  const sortings = ["Featured", "Newest", "Oldest", "Lowest Price", "Highest Price"]
+  const sortings = ["Popularity", "Newest", "Oldest", "Lowest Price", "Highest Price"]
   const [sort, setsort] = useState(sortings[0])
 
   return (
@@ -23,7 +23,7 @@ export default function Home() {
               <span>Showing: </span>
               <a onClick={() => setplDp(!plDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{pl} <i className={`fa-solid fa-caret-${plDp ? 'up align-middle' : 'down'}`}></i></a>
               <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={plDp} onClose={() => { }}>
-                {platforms.map((p,i) =>
+                {platforms.map((p, i) =>
                   <DropdownItem key={i} onClick={() => setpl(p)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${pl == p && "bg-slate-700"}`}>
                     {p}
                   </DropdownItem>
@@ -35,7 +35,7 @@ export default function Home() {
               <span>Sort By: </span>
               <a onClick={() => setsortDp(!sortDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{sort} <i className={`fa-solid fa-caret-${sortDp ? 'up align-middle' : 'down'}`}></i> </a>
               <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={sortDp} onClose={() => { }}>
-                {sortings.map((s,i) =>
+                {sortings.map((s, i) =>
                   <DropdownItem key={i} onClick={() => setsort(s)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${sort == s && "bg-slate-700"}`}>
                     {s}
                   </DropdownItem>
@@ -45,38 +45,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex py-5 flex-wrap gap-2">
-          <div
-            onMouseOver={() => document.getElementById("game-card-details1").classList.remove("invisible")}
-            onMouseOut={() => document.getElementById("game-card-details1").classList.add("invisible")}
-            className="border-2 transition-all bg-slate-900 relative border-transparent hover:border-cyan-400 rounded-3xl w-max p-1">
-            <img src="/images/bottomBanner1.png" alt="" className="w-48 h-64 rounded-2xl object-cover" />
-            <Link href={"/game/1"}>
-              <a
-                id={"game-card-details1"}
-                className="absolute flex text-2xl hover:text-white flex-col gap-4 game-card-details cursor-pointer invisible justify-end items-center h-full w-full top-0 hover:bg-[rgb(10,15,40)] hover:bg-opacity-50 rounded-3xl left-0">
-                <i className="fa-solid  fa-ellipsis"></i>
-                <span className="mx-3 text-center font-semibold">Valheim</span>
-                <i className="fa-solid mb-8  fa-circle-arrow-down"></i>
-              </a>
-            </Link>
-          </div>
-          <div
-            onMouseOver={() => document.getElementById("game-card-details2").classList.remove("invisible")}
-            onMouseOut={() => document.getElementById("game-card-details2").classList.add("invisible")}
-            className="border-2 transition-all bg-slate-900 relative border-transparent hover:border-cyan-400 rounded-3xl w-max p-1">
-            <img src="/images/bottomBanner2.png" alt="" className="w-48 h-64 rounded-2xl object-cover" />
-            <Link href={"/game/2"}>
-              <a
-                id={"game-card-details2"}
-                className="absolute flex text-2xl hover:text-white flex-col gap-4 game-card-details cursor-pointer invisible justify-end items-center h-full w-full top-0 hover:bg-[rgb(10,15,40)] hover:bg-opacity-50 rounded-3xl left-0">
-                <i className="fa-solid  fa-ellipsis"></i>
-                <span className="mx-3 text-center capitalize font-semibold">bioshock:The virus hunt</span>
-                <i className="fa-solid mb-8  fa-circle-arrow-down"></i>
-              </a>
-            </Link>
-          </div>
-
+        <div className="flex py-5 flex-wrap gap-8">
+          {Array(4).fill(null).map((_, i) =>
+            <div
+              onMouseOver={() => document.getElementById("game-card-details"+i).classList.remove("invisible")}
+              onMouseOut={() => document.getElementById("game-card-details"+i).classList.add("invisible")}
+              className="border-2 transition-all  relative border-transparent hover:border-cyan-400 hover:text-cyan:400 rounded-3xl w-1/4 p-1">
+              <img src={`/images/bottomBanner${i}.png`} alt="" className="w-full h-48 rounded-2xl object-cover" />
+              <Link href={"/game/"+i}>
+                <a
+                  id={"game-card-details"+i}
+                  className="absolute flex text-6xl flex-col game-card-details cursor-pointer invisible justify-center  items-center h-full w-full top-0 hover:bg-[rgb(10,15,40)] hover:bg-opacity-50 rounded-3xl left-0">
+                  <i className="fa-solid fa-circle-play"></i>
+                  {/* <span className="text-center font-semibold">Valheim</span> */}
+                </a>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
