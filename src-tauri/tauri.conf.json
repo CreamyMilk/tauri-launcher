@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "tauri-launcher",
-    "version": "1.1.0"
+    "version": "0.0.6"
   },
   "tauri": {
     "allowlist": {
@@ -59,19 +59,12 @@
     },
     "windows": [
       {
-        "fullscreen": false,
+        "fullscreen": true,
         "height": 720,
         "resizable": true,
         "title": "Ngamea Games Launcher",
         "width": 1280,
-        "visible": false
-      },
-      {
-        "width": 1280,
-        "height": 720,
-        "decorations": false,
-        "url": "splashscreen",
-        "label": "splashscreen"
+        "visible": true
       }
     ]
   }
