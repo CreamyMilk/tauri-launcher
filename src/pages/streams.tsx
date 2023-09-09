@@ -1,9 +1,24 @@
 import Link from "next/link";
 import Layout from "../components/layout";
+import { useEffect, useState } from "react";
+import { FETCH_STREAMS } from "../graphql/queries";
+import { GetToken } from "../../constants";
+import { FetchStream, FetchStreamResponse } from "../types/stream";
 
 
 
 export default function Streams() {
+  const [data, setdata] = useState<FetchStream[]>()
+  async function GetStreams() {
+    const res = (await FETCH_STREAMS(GetToken())) as FetchStreamResponse
+    if (res?.FetchStreams) {
+      setdata(res.FetchStreams)
+    }
+  }
+  useEffect(() => {
+    GetStreams()
+  }, [])
+
   return (
     <Layout>
       <div className="mx-10">
@@ -28,22 +43,23 @@ export default function Streams() {
             </tr>
           </thead>
           <tbody>
-            {Array(30).fill(null).map((_, i) =>
-              <tr key={i} className="bg-slate-900 shadow hover:bg-slate-800">
+
+            {data && data.map((s) =>
+              <tr key={s.id} className="bg-slate-900 shadow hover:bg-slate-800">
                 <td className="p-3">
                   <div className="flex align-items-center">
                     <img className="rounded-full h-12 w-12  object-cover" src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" alt="unsplash image" />
                     <div className="ml-3">
-                      <div className="">SHORT STREAM| MBO VS THE SHANKS</div>
-                      <div className="text-gray-500">@NoobMaster65</div>
+                      <div className="">{s.title}</div>
+                      <div className="text-gray-500">@{s.username}</div>
                     </div>
                   </div>
                 </td>
                 <td className="p-3">
-                  Counter Strike: Global Offensive
+                  {s.game}
                 </td>
                 <td className="pb-3">
-                  <Link href="./stream?id=8gqh-2wkd-2dl2"><button className="hover:text-white bg-cyan-400 text-white p-2 rounded mt-5">Watch</button></Link>
+                  <Link href={"./stream?id=" + s.roomId}><button className="hover:text-white bg-cyan-400 text-white p-2 rounded mt-5">Watch</button></Link>
                 </td>
               </tr>
             )}

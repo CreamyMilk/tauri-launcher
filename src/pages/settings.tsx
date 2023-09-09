@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AUTHTOKEN, USERNAME } from "../../constants";
+import { AUTHTOKEN, GetToken, USERNAME } from "../../constants";
 import Layout from "../components/layout";
 import { FetchProfileResponse, UserProfile } from "../types/user";
 import { FETCH_PROFILE } from "../graphql/queries";
@@ -8,7 +8,7 @@ export default function Settings() {
   const [userData, setUserData] = useState<UserProfile>()
 
   async function FetchUserData() {
-    const res = (await FETCH_PROFILE(localStorage.getItem(AUTHTOKEN))) as FetchProfileResponse
+    const res = (await FETCH_PROFILE(GetToken())) as FetchProfileResponse
     if (res?.UserProfile) {
       setUserData(res.UserProfile)
     }

@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import { useEffect, useState } from "react";
 import { Dropdown, DropdownItem } from "@windmill/react-ui";
 import { FETCH_PROFILE } from "../graphql/queries";
-import { AUTHTOKEN } from "../../constants";
+import { AUTHTOKEN, GetToken } from "../../constants";
 import { FetchProfileResponse, UserProfile } from "../types/user";
 import DepositButton from "../components/deposit";
 import WithdrawButton from "../components/withdraw";
@@ -15,7 +15,7 @@ export default function ProfilePage() {
   const [userData, setUserData] = useState<UserProfile>()
 
   async function FetchUserData() {
-    const res = (await FETCH_PROFILE(localStorage.getItem(AUTHTOKEN))) as FetchProfileResponse
+    const res = (await FETCH_PROFILE(GetToken())) as FetchProfileResponse
     if (res?.UserProfile) {
       setUserData(res.UserProfile)
     }
