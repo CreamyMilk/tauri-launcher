@@ -7,6 +7,7 @@ import "../index.css";
 import Script from "next/script";
 import { ToastContainer } from "react-toastify";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -32,6 +33,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         pauseOnHover
         theme="dark"
       />
+      <Toaster toastOptions={{ className: "capitalize",style:{backgroundColor:"#0a0f28",color:"lightgray"}, duration:2000 }} />
       <Component {...pageProps} />
     </>);
 }

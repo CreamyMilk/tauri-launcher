@@ -10,16 +10,12 @@ export const GQL = {
   ERROR: 'error',
   COMPLETE: 'complete'
 }
-
-
 export function GetTime() {
   return `
   subscription {
     currentTime
   }`
 }
-
-
 
 function WSConnectExample() {
   const ws = new WebSocket('ws://localhost:8080/query', "graphql-ws");

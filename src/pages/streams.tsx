@@ -12,16 +12,17 @@ export default function Streams() {
             <p className="text-3xl font-bold">Live Streams</p>
             <p className="my-5">Stream and Watch your favourite players</p>
           </div>
-          <Link href="./stream?create=true"><a className="bg-purple-400 float-right px-2 py-3 rounded-xl">
-            Start Stream
-          </a>
+          <Link href="./stream?create=true">
+            <button className="bg-cyan-400 hover:bg-cyan-500 float-right px-2 py-3 rounded-lg">
+              Start Stream
+            </button>
           </Link>
         </div>
-        <input type="text" className="px-4 py-3 text-white bg-slate-900 ring-px ring-cyan-400 rounded-xl w-full" placeholder="🔍 Search" />
+        <input type="text" className="px-4 py-3 text-white bg-slate-900 focus:outline-none ring-px ring-cyan-400 rounded-xl w-full" placeholder="🔍 Search" />
         <table className="border-spacing-y-3 table text-gray-400 border-separate space-y-6 text-sm w-full">
           <thead className="bg-slate-800 text-gray-500">
             <tr>
-              <th className="p-3 text-left">Streamer Name</th>
+              <th className="p-3 text-left">Streamer</th>
               <th className="p-3 text-left">Game</th>
               <th className="p-3 text-left">Action</th>
             </tr>
@@ -41,8 +42,8 @@ export default function Streams() {
                 <td className="p-3">
                   Counter Strike: Global Offensive
                 </td>
-                <td className="p-3">
-                  <Link href="./stream?id=8gqh-2wkd-2dl2"><a className="w-full hover:text-white bg-purple-400 text-white p-2 rounded mt-5">Enter</a></Link>
+                <td className="pb-3">
+                  <Link href="./stream?id=8gqh-2wkd-2dl2"><button className="hover:text-white bg-cyan-400 text-white p-2 rounded mt-5">Watch</button></Link>
                 </td>
               </tr>
             )}

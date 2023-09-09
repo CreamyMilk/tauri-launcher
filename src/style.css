@@ -27,7 +27,7 @@
   background-repeat: no-repeat;
 }
 .loginpage section,form {
-  background-color: rgba(0, 34, 46, 0.273);
+  background-color: rgba(0, 18, 46, 0.2);
 }
 .text-404 p{
   letter-spacing: 1.5px;
@@ -53,4 +53,11 @@
 
 #greet-input {
   margin-right: 5px;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgb(21, 21, 21) inset !important;
+  -webkit-text-fill-color: white !important;
 }

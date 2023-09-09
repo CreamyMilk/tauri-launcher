@@ -22,7 +22,7 @@ export default function Home() {
             <div className="relative">
               <span>Showing: </span>
               <a onClick={() => setplDp(!plDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{pl} <i className={`fa-solid fa-caret-${plDp ? 'up align-middle' : 'down'}`}></i></a>
-              <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={plDp} onClose={() => { }}>
+              <Dropdown className="bg-gray-900 border-none z-10 right-0 mt-2" isOpen={plDp} onClose={() => { }}>
                 {platforms.map((p, i) =>
                   <DropdownItem key={i} onClick={() => setpl(p)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${pl == p && "bg-slate-700"}`}>
                     {p}
@@ -34,7 +34,7 @@ export default function Home() {
             <div className="relative">
               <span>Sort By: </span>
               <a onClick={() => setsortDp(!sortDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{sort} <i className={`fa-solid fa-caret-${sortDp ? 'up align-middle' : 'down'}`}></i> </a>
-              <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={sortDp} onClose={() => { }}>
+              <Dropdown className="bg-gray-900 border-none z-10 right-0 mt-2" isOpen={sortDp} onClose={() => { }}>
                 {sortings.map((s, i) =>
                   <DropdownItem key={i} onClick={() => setsort(s)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${sort == s && "bg-slate-700"}`}>
                     {s}
@@ -45,19 +45,19 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex py-5 flex-wrap gap-8">
+        <div className="flex py-5 flex-wrap gap-2">
           {Array(4).fill(null).map((_, i) =>
             <div
               onMouseOver={() => document.getElementById("game-card-details"+i).classList.remove("invisible")}
               onMouseOut={() => document.getElementById("game-card-details"+i).classList.add("invisible")}
-              className="border-2 transition-all  relative border-transparent hover:border-cyan-400 hover:text-cyan:400 rounded-3xl w-1/4 p-1">
-              <img src={`/images/bottomBanner${i}.png`} alt="" className="w-full h-48 rounded-2xl object-cover" />
+              className="border-2 transition-all relative border-transparent hover:border-cyan-400 hover:text-cyan:400 rounded-3xl w-1/5 p-1">
+              <img src={`/images/bottomBanner${i}.png`} alt="" className="w-full h-44 rounded-2xl object-cover" />
               <Link href={"/game/"+i}>
                 <a
                   id={"game-card-details"+i}
-                  className="absolute flex text-6xl flex-col game-card-details cursor-pointer invisible justify-center  items-center h-full w-full top-0 hover:bg-[rgb(10,15,40)] hover:bg-opacity-50 rounded-3xl left-0">
-                  <i className="fa-solid fa-circle-play"></i>
-                  {/* <span className="text-center font-semibold">Valheim</span> */}
+                  className="absolute flex flex-col game-card-details cursor-pointer invisible justify-center  items-center h-full w-full top-0 hover:bg-[rgb(10,15,40)] hover:bg-opacity-50 rounded-3xl left-0">
+                  <i className="fa-solid text-6xl fa-circle-play"></i>
+                  <span className="text-center overflow-hidden break-all mt-5 w-fit mx-3 font-semibold">Valheim</span>
                 </a>
               </Link>
             </div>

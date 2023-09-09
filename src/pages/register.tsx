@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
-import { RegisterReq } from "../types";
+import { RegisterInput, RegisterResponse } from "../types/auth";
+import { REGISTER } from "../graphql/mutations";
+import { AUTHTOKEN, USERNAME } from "../../constants";
 
 export default function Register() {
   const Lvl = ({ i, t, s }) =>
@@ -12,12 +14,26 @@ export default function Register() {
   const [pos, setpos] = useState(0)
   const [goodName, setgoodName] = useState()
 
-  const [data, setData] = useState<RegisterReq>()
+  const [data, setData] = useState<RegisterInput>()
+  const [pwdOn, setPwdOn] = useState(false)
+
+  const [loading, setloading] = useState(false)
 
   async function handleRegister() {
-    console.log(data);
-    window.location.assign("/home")
+    setloading(true)
+    const res = (await REGISTER(data)) as RegisterResponse
+    if (res?.Register) {
+      localStorage.setItem(AUTHTOKEN, res.Register.token)
+      localStorage.setItem(USERNAME, res.Register.name)
+      window.location.assign("/home")
+    }
+    setloading(false)
   }
+
+  const PwdShow = () =>
+    <i onClick={() => setPwdOn(!pwdOn)}
+      className={"fa-solid absolute top-7 right-5 cursor-pointer hover:text-cyan-400 fa-sm fa-eye" + (!pwdOn ? "-slash" : "")}></i>
+
 
   return (
     <main className="loginpage text-white">
@@ -47,7 +63,6 @@ export default function Register() {
                   placeholder="Username"
                   onChange={(e) => setData({ ...data, username: e.target.value })}
                   className="flex-grow bg-transparent hover:outline-none focus:outline-none"
-                  defaultValue=""
                 />
                 {goodName !== undefined &&
                   (goodName == true ?
@@ -69,20 +84,26 @@ export default function Register() {
             :
             <>
               <span className="text-4xl mb-10 font-semibold">Enter your password and confirm</span>
-              <input
-                type="password"
-                value={data?.password}
-                placeholder="Password"
-                onChange={(e) => setData({ ...data, password: e.target.value })}
-                className="border w-1/3 p-4 mb-4 rounded-full bg-transparent hover:outline-none focus:outline-none"
-              />
-              <input
-                type="password"
-                value={data?.confirmPassword}
-                placeholder="Confirm Password"
-                onChange={(e) => setData({ ...data, confirmPassword: e.target.value })}
-                className="border w-1/3 p-4 rounded-full bg-transparent hover:outline-none focus:outline-none"
-              />
+              <div className="relative w-1/3">
+                <input
+                  type={pwdOn ? "text" : "password"}
+                  value={data?.password}
+                  placeholder="Password"
+                  onChange={(e) => setData({ ...data, password: e.target.value })}
+                  className="border w-full p-4 mb-4 rounded-full bg-transparent hover:outline-none focus:outline-none"
+                />
+                <PwdShow />
+              </div>
+              <div className="relative w-1/3">
+                <input
+                  type={pwdOn ? "text" : "password"}
+                  value={data?.confirmPassword}
+                  placeholder="Confirm Password"
+                  onChange={(e) => setData({ ...data, confirmPassword: e.target.value })}
+                  className="border w-full p-4 rounded-full bg-transparent hover:outline-none focus:outline-none"
+                />
+                <PwdShow />
+              </div>
             </>
         }
         <div className="border-t border-slate-400 flex gap-7 px-10 text-xl py-10 w-full bottom-0 absolute">
@@ -95,8 +116,8 @@ export default function Register() {
                 <i className="fa-solid fa-chevron-left"></i>
               </button>
             }
-            <button type="button" onClick={() => pos < 2 ? setpos(pos + 1) : handleRegister()} className="rounded-full ml-5 text-lg border-2 w-max border-cyan-500 px-9 hover:bg-cyan-400 py-3">
-              {pos == 2 ? "Create your account" : "Continue"}
+            <button disabled={loading} type="button" onClick={() => pos < 2 ? setpos(pos + 1) : handleRegister()} className="rounded-full ml-5 text-lg border-2 w-max border-cyan-500 px-9 hover:bg-cyan-400 py-3">
+              {pos == 2 ? "Register" : "Continue"}
             </button>
           </div>
         </div>

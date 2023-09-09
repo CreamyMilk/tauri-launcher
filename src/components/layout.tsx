@@ -1,12 +1,18 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { Suspense, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import Loading from "./loading"
+import { USERNAME } from "../../constants"
 
 export default function Layout({ children }) {
   const router = useRouter()
   const [moreTags, setmoreTags] = useState(false)
   console.log(router.pathname);
+  const [username, setusername] = useState('')
+
+  useEffect(() => {
+    setusername(localStorage.getItem(USERNAME))
+  }, [])
 
 
   const Navlink = ({ text, url }) =>
@@ -95,7 +101,7 @@ export default function Layout({ children }) {
           </div>
           <Link href="/profile">
             <a className={"inline-flex items-center gap-2 " + (router.pathname == "/profile" ? "text-cyan-400" : "text-white")}>
-              <img src="/bg/bg3.jpg" className="h-10 w-10 rounded-full object-cover" />NoobMaster65
+              <img src="/bg/bg3.jpg" className="h-10 w-10 rounded-full object-cover" />@{username}
             </a>
           </Link>
         </div>
