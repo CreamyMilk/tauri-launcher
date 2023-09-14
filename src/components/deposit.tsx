@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "./modal";
 import toast from "react-hot-toast";
 import { GetToken } from "../../constants";
+import CryptoConnect from "./connect/connect";
 
 export default function DepositButton() {
   const [open, setopen] = useState<boolean | null>(null)
@@ -37,18 +38,22 @@ export default function DepositButton() {
             <PaymentMethod text="USDT" img="/usdtlogo.png" type={false} />
           </div>
 
-          <form onSubmit={handleDeposit} className="flex flex-col gap-4 bg-transparent">
+          <form onSubmit={handleDeposit} className="flex flex-col bg-transparent">
             {method ?
-              <input minLength={10} required type="tel" placeholder="Enter Mpesa number" className="p-2 w-full border border-cyan-400 bg-transparent" />
+              <>
+                <p className="mb-1 font-light">Phone Number</p>
+                <input minLength={10} required type="tel" placeholder="Enter Mpesa number" className="p-2 w-full border border-cyan-400 bg-transparent" />
+                <div className="mt-3">
+                  <p className="mb-1 font-light">Amount in Kes</p>
+                  <input min={method ? 100 : 1} required type="number" placeholder="Enter amount in USD" className="p-2 w-full border border-cyan-400 bg-transparent" />
+                  <p className="my-1 text-sm font-light">Deposit Rates: $1 = Kes 148</p>
+                  <p className="font-light text-sm">Minimum Deposit amount is {method ? 'Ksh 100' : '$1'}</p>
+                </div>
+                <button disabled={!method} className="py-2 disabled:bg-gray-400 px-4 mt-4 text-white hover:bg-cyan-400 bg-cyan-500 font-semibold text-lg">Pay Now</button>
+              </>
               :
-              <button type="button" onClick={() => toast.error("Crypto Deposits Coming Soon")} className="py-2 px-4 mt-auto text-white hover:bg-teal-500 bg-teal-600 font-semibold text-lg">Connect Wallet</button>
+              <CryptoConnect />
             }
-            <div>
-              {method && <p className="mb-1 font-light">Deposit Rates: $1 = Kes 148</p>}
-              <input min={method ? 100 : 1} required type="number" placeholder="Enter amount in USD" className="p-2 w-full border border-cyan-400 bg-transparent" />
-              <p className="my-2 font-light text-sm">Minimum Deposit amount is {method ? 'Ksh 100' : '$1'}</p>
-            </div>
-            <button disabled={!method} className="py-2 disabled:bg-gray-400 px-4 mt-auto text-white hover:bg-cyan-400 bg-cyan-500 font-semibold text-lg">Pay Now</button>
           </form>
         </div>
       </Modal>

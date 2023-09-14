@@ -4,5 +4,5 @@ export const USERNAME = "user-name"
 export function GetToken() {
   return localStorage.getItem(AUTHTOKEN)
 }
-export const API_URL = "https://launcher-backend.onrender.com/query"
-// export const API_URL="http://localhost:8080/query"
+// export const API_URL = "https://launcher-backend.onrender.com/query"
+export const API_URL="http://localhost:8080/query"
