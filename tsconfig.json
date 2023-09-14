@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/stream.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/stream.js", "src/components/connect/connect.jsx"],
   "exclude": ["node_modules"]
 }

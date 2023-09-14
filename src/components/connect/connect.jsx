@@ -11,7 +11,7 @@ const config = createConfig(
     chains,
     appName: "Ngamea Games",
     // Optional
-    appDescription: "Games Launcher by Ngamea Games",
+    appDescription: "Official Game Launcher by Ngamea Games",
     appUrl: "https://ngamiagameslanding.vercel.app/", // your app's url
     appIcon: "/ngamea.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
   }),
@@ -64,14 +64,8 @@ export function DepositTransaction() {
   })
 
   return (
-    <form
-      className="flex flex-col bg-transparent"
-      onSubmit={(e) => {
-        e.preventDefault()
-        // sendTransaction?.()
-      }}
-    >
-      <p className="mb-3 font-light">Amount in Ethers</p>
+    <div className="flex flex-col bg-transparent">
+      <p className="mb-3 font-light">Amount in Matic</p>
       <input
         aria-label="Amount (ether)"
         onChange={(e) => setAmount(e.target.value)}
@@ -80,6 +74,9 @@ export function DepositTransaction() {
         value={amount}
       />
       <button
+      onClick={()=>{
+        sendTransaction?.()
+      }}
         className="py-2 disabled:bg-gray-400 px-4 mt-auto text-white hover:bg-cyan-400 bg-cyan-500 font-semibold text-lg"
         disabled={isLoading || !sendTransaction || !receiverAddress || !amount}
       >
@@ -87,12 +84,12 @@ export function DepositTransaction() {
       </button>
       {isSuccess && (
         <div>
-          Successfully sent {amount} ether to {receiverAddress}
+          Successfully sent {amount} matic to {receiverAddress}
           <div>
-            <a href={`https://etherscan.io/tx/${data?.hash}`}>Etherscan</a>
+            <a className="underline" target="_blank" href={`https://polygonscan.com/tx/${data?.hash}`}>Polygon Chain Explorer</a>
           </div>
         </div>
       )}
-    </form>
+    </div>
   )
 }

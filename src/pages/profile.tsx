@@ -71,7 +71,7 @@ export default function ProfilePage() {
           )
           :
           Array(4).fill(null).map((_, idx) =>
-            <div className="flex relative mb-10 items-center">
+            <div key={idx} className="flex relative mb-10 items-center">
               <img src="/images/bottomBanner2.png" className="h-44 w-32 absolute z-10 object-cover" alt="" />
               <div className="flex items-start gap-5 ml-16 p-12 w-full  left-16 bg-[rgb(16,26,54)]">
                 <div className="flex ml-16 font-semibold gap-2 flex-col">
