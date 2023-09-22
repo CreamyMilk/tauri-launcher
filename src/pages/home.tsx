@@ -22,7 +22,7 @@ export default function Home() {
             <div className="relative">
               <span>Showing: </span>
               <a onClick={() => setplDp(!plDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{pl} <i className={`fa-solid fa-caret-${plDp ? 'up align-middle' : 'down'}`}></i></a>
-              <Dropdown className="bg-gray-900 border-none z-10 right-0 mt-2" isOpen={plDp} onClose={() => { }}>
+              <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={plDp} onClose={() => { }}>
                 {platforms.map((p, i) =>
                   <DropdownItem key={i} onClick={() => setpl(p)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${pl == p && "bg-slate-700"}`}>
                     {p}
@@ -34,7 +34,7 @@ export default function Home() {
             <div className="relative">
               <span>Sort By: </span>
               <a onClick={() => setsortDp(!sortDp)} className="font-semibold hover:border-transparent  cursor-pointer capitalize">{sort} <i className={`fa-solid fa-caret-${sortDp ? 'up align-middle' : 'down'}`}></i> </a>
-              <Dropdown className="bg-gray-900 border-none z-10 right-0 mt-2" isOpen={sortDp} onClose={() => { }}>
+              <Dropdown className="bg-slate-900 border-none z-10 right-0 mt-2" isOpen={sortDp} onClose={() => { }}>
                 {sortings.map((s, i) =>
                   <DropdownItem key={i} onClick={() => setsort(s)} className={`text-gray-300 hover:bg-slate-700 capitalize mt-2 ${sort == s && "bg-slate-700"}`}>
                     {s}
