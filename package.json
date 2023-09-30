@@ -1,7 +1,7 @@
 {
   "name": "tauri-launcher",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "dev": "next dev -p 1420",
     "build": "next build && next export -o dist",
@@ -17,7 +17,6 @@
     "@popperjs/core": "^2.9.2",
     "@swc/helpers": "^0.5.2",
     "@tauri-apps/api": "^1.4.0",
-    "@videosdk.live/react-sdk": "^0.1.74",
     "@windmill/react-ui": "^0.6.0",
     "connectkit": "^1.5.3",
     "ethers": "^6.7.1",
