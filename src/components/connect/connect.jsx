@@ -17,13 +17,13 @@ const config = createConfig(
   }),
 );
 
-export default function CryptoConnect() {
+export default function CryptoConnect({ txType }) {
   return (
     <WagmiConfig config={config}>
       <ConnectKitProvider>
         <ConnectKitButton theme="retro" showBalance />
         <ConnectStatus />
-        <DepositTransaction />
+        {txType == "deposit" ? <DepositTransaction /> : <WithdrawTransaction />}
       </ConnectKitProvider>
     </WagmiConfig>
   );
@@ -43,10 +43,23 @@ import {
   useWaitForTransaction,
 } from 'wagmi'
 import { parseEther } from "ethers";
+import { space } from "postcss/lib/list";
+import toast from "react-hot-toast";
 // import { utils } from 'ethers'
 
 
-export function DepositTransaction() {
+function WithdrawTransaction() {
+  return (
+    <div>
+      <input min={1} type="number" placeholder="Enter amount in USD" className="p-2 w-full border border-cyan-400 bg-transparent" />
+      <p className="my-2 font-light text-sm">Minimum Withdraw amount is $1</p>
+      <button onClick={() => toast.error("Crypto Withdrawals coming soon")} 
+      className="py-2 disabled:bg-gray-400 w-full px-4 mt-auto text-white hover:bg-green-500 bg-green-600 font-semibold text-lg">Withdraw USDT</button>
+    </div>
+  )
+}
+
+function DepositTransaction() {
   const receiverAddress = "0xa0919306ccc9C9787b8a629adcd16E086291104e"
   const [debouncedTo] = useDebounce(receiverAddress, 500)
 
@@ -74,13 +87,13 @@ export function DepositTransaction() {
         value={amount}
       />
       <button
-      onClick={()=>{
-        sendTransaction?.()
-      }}
+        onClick={() => {
+          sendTransaction?.()
+        }}
         className="py-2 disabled:bg-gray-400 px-4 mt-auto text-white hover:bg-cyan-400 bg-cyan-500 font-semibold text-lg"
         disabled={isLoading || !sendTransaction || !receiverAddress || !amount}
       >
-        {isLoading ? 'Sending...' : 'Send'}
+        {isLoading ? 'Sending Transaction...' : 'Deposit Now'}
       </button>
       {isSuccess && (
         <div>

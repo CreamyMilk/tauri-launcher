@@ -27,7 +27,7 @@ export default function Streams() {
             <p className="text-3xl font-bold">Live Streams</p>
             <p className="my-5">Stream and Watch your favourite players</p>
           </div>
-          <Link href="./stream?create=true">
+          <Link legacyBehavior href="./stream?create=true">
             <button className="bg-cyan-400 hover:bg-cyan-500 float-right px-2 py-3 rounded-lg">
               Start Stream
             </button>
@@ -59,7 +59,7 @@ export default function Streams() {
                   {s.game}
                 </td>
                 <td className="pb-3">
-                  <Link href={"./stream?id=" + s.roomId}><button className="hover:text-white bg-cyan-400 text-white p-2 rounded mt-5">Watch</button></Link>
+                  <Link legacyBehavior href={"./stream?id=" + s.roomId}><button className="hover:text-white bg-cyan-400 text-white p-2 rounded mt-5">Watch</button></Link>
                 </td>
               </tr>
             )}

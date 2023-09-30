@@ -7,6 +7,7 @@ import { AUTHTOKEN, GetToken } from "../../constants";
 import { FetchProfileResponse, UserProfile } from "../types/user";
 import DepositButton from "../components/deposit";
 import WithdrawButton from "../components/withdraw";
+import { Image, Skeleton } from "@nextui-org/react";
 
 
 export default function ProfilePage() {
@@ -28,31 +29,34 @@ export default function ProfilePage() {
   return (
     <Layout>
       <section className="text-white mx-10">
-        {userData &&
-          <div className="flex items-stretch gap-5">
-            <img src={userData.avatar || "/images/bottomBanner5.png"} className="w-44 object-cover" alt="" />
-            <div className="flex items-start flex-col gap-4">
-              <span>{userData.email}</span>
-              <h2 className="font-bold text-3xl">{userData.username}</h2>
-              <div className="inline-flex items-center gap-2">
-                <i className="fa-solid text-green-400 fa-circle fa-2xs"></i>
-                Online
-              </div>
-              <article className="py-2 px-5 text-center mt-auto border border-cyan-500 font-semibold text-lg">Level {userData.level}</article>
+
+        <div className="flex items-stretch gap-5">
+          {userData ?
+            <Image radius="none" src={userData?.avatar || "/images/bottomBanner5.png"} className="w-44 h-full object-cover" alt="No pfp" />
+            :
+            <Skeleton><div className="w-44 h-full"></div></Skeleton>}
+          <div className="flex items-start flex-col gap-4">
+            {userData ? <span>{userData?.email}</span> : <Link className="text-cyan-500" href="login">Please Login to continue</Link>}
+            <h2 className="font-bold text-3xl">{userData?.username}</h2>
+            <div className="inline-flex items-center gap-2">
+              <i className={"fa-solid  fa-circle fa-2xs " + (userData ? "text-green-400" : "text-gray-400")}></i>
+              {userData ? "Online" : "Logged Out"}
             </div>
-            <div className="flex flex-col items-end gap-3 ml-auto">
-              <Link href="/settings"><a className="text-sky-400 uppercase">Edit Profile</a></Link>
-              <div className="flex gap-2 bg-[rgb(16,26,54)] px-20 py-9 font-bold flex-col items-center">
-                <span className="text-lg text-green-400">Wallet Balance</span>
-                <span className="text-3xl">${userData.balance.toFixed(2)}</span>
-                <div className="flex mt-5 gap-10">
-                  <DepositButton />
-                  <WithdrawButton bal={userData.balance.toFixed(2)} />
-                </div>
+            <article className="py-2 px-5 text-center mt-auto border border-cyan-500 font-semibold text-lg">Level {userData?.level || 0}</article>
+          </div>
+          <div className="flex flex-col items-end gap-3 ml-auto">
+            <Link legacyBehavior href="/settings"><a className="text-sky-400 uppercase">Edit Profile</a></Link>
+            <div className="flex gap-2 bg-[rgb(16,26,54)] px-20 py-9 font-bold flex-col items-center">
+              <span className="text-lg text-green-400">Wallet Balance</span>
+              <span className="text-3xl">${userData?.balance.toFixed(2) || 0}</span>
+              <div className="flex mt-5 gap-10">
+                <DepositButton />
+                <WithdrawButton bal={userData?.balance.toFixed(2) || 0} />
               </div>
             </div>
           </div>
-        }
+        </div>
+
         <div className="flex gap-10 items-center my-12">
           <a onClick={() => settab(false)} className={"text-2xl font-semibold uppercase " + (!tab && "text-cyan-400")}>My Games</a>
           <a onClick={() => settab(true)} className={" text-2xl font-semibold uppercase " + (tab && "text-cyan-400")}>Messages</a>
@@ -76,7 +80,7 @@ export default function ProfilePage() {
               <div className="flex items-start gap-5 ml-16 p-12 w-full  left-16 bg-[rgb(16,26,54)]">
                 <div className="flex ml-16 font-semibold gap-2 flex-col">
                   <span className="text-gray-500">Latest Version 2.1.0</span>
-                  <Link href="/game/2"><a className="text-3xl capitalize">bioshock: the virus hunt</a></Link>
+                  <Link legacyBehavior href="/game/2"><a className="text-3xl capitalize">bioshock: the virus hunt</a></Link>
                   <span className="text-gray-300">10k+ Downloads</span>
                   <span className="text-gray-300">⭐️ 4.6 Rating</span>
                 </div>

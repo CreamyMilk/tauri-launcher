@@ -50,7 +50,7 @@ export default function Register() {
               placeholder="Email"
               className="border w-1/3 p-4 rounded-full bg-transparent hover:outline-none focus:outline-none"
             />
-            <Link href="/login"><a className="mt-10 text-green-400 text-lg">Login instead?</a></Link>
+            <Link legacyBehavior href="/login"><a className="mt-10 text-green-400 text-lg">Login instead?</a></Link>
 
           </>
           : pos == 1 ?

@@ -49,7 +49,7 @@ export default function Login() {
           <PwdShow />
         </div>
         <button disabled={loading} className="rounded-full text-lg border-2 w-max border-cyan-500 px-9 hover:bg-cyan-400 py-3">Login</button>
-        <Link href="/register"><a className="text-green-400 text-lg">Create an account?</a></Link>
+        <Link legacyBehavior href="/register"><a className="text-green-400 text-lg">Create an account?</a></Link>
       </form>
     </main>
   )

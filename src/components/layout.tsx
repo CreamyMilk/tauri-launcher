@@ -16,13 +16,13 @@ export default function Layout({ children }) {
 
 
   const Navlink = ({ text, url }) =>
-    <Link href={url}>
+    <Link legacyBehavior href={url}>
       <a className={`rounded-3xl capitalize  hover:bg-[rgb(35,37,57)] w-full px-5 py-2 
     ${router.pathname == url ? "bg-[rgb(35,37,57)] text-cyan-400" : ""}`}>{text}</a>
     </Link>
 
   const Taglink = ({ text, color }) =>
-    <Link href={"/home?tag=" + text}>
+    <Link legacyBehavior href={"/home?tag=" + text}>
       <a className={`rounded-3xl flex items-center  gap-2 capitalize hover:bg-[rgb(35,37,57)] w-full px-5 py-2
                   ${router.query.tag == text ? "bg-[rgb(35,37,57)] text-cyan-400" : ""}`}>
         <i className={"fa-solid fa-tag " + color}></i>{text}
@@ -30,7 +30,7 @@ export default function Layout({ children }) {
     </Link>
 
   const NavLinkIcon = ({ text, icon, url }) =>
-    <Link href={url}>
+    <Link legacyBehavior href={url}>
       <a className={`rounded-3xl flex items-center gap-2  capitalize hover:bg-[rgb(35,37,57)] w-full px-4 py-2
         ${router.pathname == url ? "bg-[rgb(35,37,57)] text-cyan-400" : ""}`}>
         {icon}{text}
@@ -51,7 +51,7 @@ export default function Layout({ children }) {
           <Navlink text="All Games" url="/home" />
           <Navlink text="Installed" url="/installed" />
           <Navlink text="Community" url="/community" />
-          <Link href="/publish"><a className={`rounded-3xl  capitalize text-cyan-500 w-full px-4 py-2`}><i className="fa-solid fa-plus"></i> Add Games</a></Link>
+          <Link legacyBehavior href="/publish"><a className={`rounded-3xl  capitalize text-cyan-500 w-full px-4 py-2`}><i className="fa-solid fa-plus"></i> Add Games</a></Link>
         </ul>
         <h4 className="uppercase text-gray-400 font-semibold ml-4 mt-10">Tags</h4>
         <ul className="flex flex-col mt-3 gap-1">
@@ -99,7 +99,7 @@ export default function Layout({ children }) {
               defaultValue=""
             />
           </div>
-          <Link href="/profile">
+          <Link legacyBehavior href="/profile">
             <a className={"inline-flex items-center gap-2 " + (router.pathname == "/profile" ? "text-cyan-400" : "text-white")}>
               <img src="/bg/bg3.jpg" className="h-10 w-10 rounded-full object-cover" />@{username}
             </a>
